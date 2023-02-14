@@ -26,7 +26,7 @@ module.exports = {
         user: 'root',
         host: '178.170.37.129',
         ref: 'origin/main',
-        repo: 'git@github.com:malkico/dsp-archiwebf22-hm-hm-at-workflow.git',
+        repo: 'git@github.com:thetiptop22/dsp-archiwebf22-hm-hm-at-app.git',
         path: '/workflow',
         'pre-setup': '',
         'pre-deploy-local': "echo 'This is a local executed command'",
