@@ -1,6 +1,6 @@
 module.exports = {
     apps: [{
-      name: '7linky',
+      name: 'The_Tiptop',
       script: './index.js',
   
       // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
@@ -24,13 +24,13 @@ module.exports = {
     deploy: {
       production: {
         user: 'root',
-        host: '178.170.37.129',
+        host: 'localhost',
         ref: 'origin/main',
         repo: 'git@github.com:thetiptop22/dsp-archiwebf22-hm-hm-at-app.git',
-        path: '/workflow',
+        path: '/app',
         'pre-setup': '',
         'pre-deploy-local': "echo 'This is a local executed command'",
-        'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
+        'post-deploy': 'npm i && pm2 reload ecosystem.config.js --env production',
         "post-setup": "ls -la"
       }
     }

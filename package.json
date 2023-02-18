@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --passWithNoTests",
     "watch": "nodemon -e js,json,hbs index.js --trace-sync-io",
-    "ui": "browser-sync start --proxy localhost:3000 --files=* --ignore=node_modules --reload-delay 1000 --no-ui --no-inject-changes"
+    "ui": "browser-sync start --proxy localhost:3000 --files=* --ignore=node_modules --reload-delay 1000 --no-ui --no-inject-changes",
+    "reload" : "git pull origin main && pm2 reload"
   },
   "author": "",
   "license": "ISC",

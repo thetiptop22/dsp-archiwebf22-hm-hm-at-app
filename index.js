@@ -13,8 +13,15 @@ liveReloadServer.server.once("connection", () => {
 var app = express();
 app.use(connectLiveReload());
 
+process.on('SIGINT', function() {
+  db.stop(function(err) {
+    process.exit(err ? 1 : 0);
+  });
+});
+
+
 app.get("/", function (req, res) {
-  res.send("Hello World! ... pp j a3");
+  res.send("Hello World! 10");
 });
 
 app.listen(3000, function () {
