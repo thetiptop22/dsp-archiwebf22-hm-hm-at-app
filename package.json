@@ -19,6 +19,11 @@
     "browser-sync": "^2.27.11",
     "connect-livereload": "^0.6.1",
     "livereload": "^0.9.3",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express-validator": "^6.15.0",
+    "mongoose": "^6.9.1",
+    "volleyball": "^1.5.1"
   }
 }
