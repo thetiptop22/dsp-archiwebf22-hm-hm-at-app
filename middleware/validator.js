@@ -24,5 +24,5 @@ module.exports.validateUser = [
         if (user) {
             throw new Error('Email already exists');
         }
-    }),
+    })
 ]

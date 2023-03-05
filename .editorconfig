@@ -1,0 +1,30 @@
+root = true
+
+[*]
+charset = utf-8
+indent_size = 4
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[Makefile]
+indent_style = tab
+
+[*.sass]
+indent_style = tab
+
+[*.yml]
+# Markdown in YAML
+trim_trailing_whitespace = false
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[Caddyfile]
+indent_style = tab
+
+[Caddyfile.*]
+indent_style = tab
+

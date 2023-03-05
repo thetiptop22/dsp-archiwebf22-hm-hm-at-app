@@ -12,7 +12,7 @@ router.post('/login', ClientController.login);
 router.get('/', ClientController.list);
 
 // Get a Client by email
-router.get('/:email', ClientController.read);
+router.get('/client/:email', ClientController.findbyemail);
 
 // Update a client by id
 router.put('/:id', ClientController.update);

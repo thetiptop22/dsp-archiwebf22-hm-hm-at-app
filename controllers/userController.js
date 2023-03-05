@@ -1,18 +1,52 @@
 const User = require('../models/userModel');
+const Client = require('../models/clientModel');
 
 // Create a new user
-exports.create = function (req, res) {
+exports.create = async function (req, res) {
     try {
         const user = new User(req.body);
-        user.save(function (err) {
-            if (err) res.status(400).send(err);
-            else res.json(user);
+        await user.save(function (err) {
+            if (err) {
+                res.status(400).send(err);
+                console.log(err);
+            } else res.json(user);
         });
     } catch (err) {
         res.status(500).send(err);
     }
 };
 
+// Create a new client
+exports.createClient = async function (req, res) {
+    console.log("creating client ...");
+    try {
+        const user = new User(req.body);
+        await user.save(async function (err) {
+            if (err) {
+                res.status(400).send(err);
+                console.log(err);
+            } else {
+                const client = new Client(req.body);
+                client.user = user;
+                await client.save(function (err) {
+                    if (err) throw err;
+                    else res.json(client);
+                });
+            }
+        });
+    } catch (err) {
+        res.status(500).send(err);
+    }
+};
+
+exports.get = async (req, res) => {
+    User.find({}, (err, users) => {
+        if (err || users.length === 0) throw new Error('users_notfound' + err);
+        res.status(201).json({ users: users });
+    }).select('-password -__v');
+};
+
+/*
 // Get all users
 exports.list = function (req, res) {
     try {
@@ -69,5 +103,8 @@ exports.delete = function (req, res) {
     } catch (err) {
         res.status(500).send(err);
     }
+
+
 };
 
+*/

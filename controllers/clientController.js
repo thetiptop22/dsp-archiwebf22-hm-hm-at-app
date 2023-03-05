@@ -9,6 +9,7 @@ exports.create = function (req, res) {
             else res.json(client);
         });
     } catch (err) {
+        console.log({ err });
         res.status(500).send(err);
     }
 };
@@ -16,11 +17,12 @@ exports.create = function (req, res) {
 // Get all clients
 exports.list = function (req, res) {
     try {
-        Client.find({}, function (err, clients) {
+        Client.find(function (err, clients) {
             if (err) throw err;
             else res.json(clients);
         });
     } catch (err) {
+        console.log({ err });
         res.status(500).send(err);
     }
 };
@@ -28,11 +30,39 @@ exports.list = function (req, res) {
 /**
  * Get client by email
  **/
-exports.findbyemail = function (req,res) {
+
+const findEmail = (email) => {
+    const obj = [
+        {
+            $lookup: {
+                from: 'users',
+                localField: 'user',
+                foreignField: '_id',
+                as: 'user',
+            },
+        },
+        {
+            $match: {
+                'user.email': email,
+            },
+        },
+        {
+            $unwind: {
+                path: '$user',
+            },
+        },
+    ];
+
+    return Client.aggregate(obj);
+};
+exports.findbyemail = function (req, res) {
     try {
-        Client.findOne({email: req.body.email},function (err, client) {
+        findEmail(req.params.email).exec(function (err, client) {
             if (err) throw err;
-            else res.json(client);
+            // check if client exists
+            else if (client.length === 0)
+                res.status(404).json("client not found");
+            else res.status(201).json(client);
         });
     } catch (err) {
         res.status(500).send(err);
@@ -42,12 +72,15 @@ exports.findbyemail = function (req,res) {
 /**
  * Get client to login
  **/
-exports.login = function (req,res) {
+exports.login = function (req, res) {
     try {
-        Client.findOne({email: req.body.email,password: req.body.password},function (err, client) {
-            if (err) throw err;
-            else res.json(client);
-        });
+        Client.findOne(
+            { email: req.body.email, password: req.body.password },
+            function (err, client) {
+                if (err) throw err;
+                else res.json(client);
+            }
+        );
     } catch (err) {
         res.status(500).send(err);
     }
@@ -55,16 +88,19 @@ exports.login = function (req,res) {
 // Update client by id
 exports.update = function (req, res) {
     try {
-       Client.findOneAndUpdate({
-                _id: req.params.id
-            }, req
-            .body, {
-                new: true
+        Client.findOneAndUpdate(
+            {
+                _id: req.params.id,
+            },
+            req.body,
+            {
+                new: true,
             },
             function (err, client) {
                 if (err) throw err;
                 else res.json(client);
-            });
+            }
+        );
     } catch (error) {
         res.status(500).send(err);
     }
