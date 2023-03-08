@@ -62,6 +62,12 @@ app.get('/dashboard', isConnected,function (req, res) {
     res.render('dashboard');
 });
 
+app.get('/login_h', function (req, res) {
+
+
+    res.render('login_h');
+});
+
 app.use("/auth", require('./routers/authRouter'));
 
 app.listen(port, () => {
