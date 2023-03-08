@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta
+            name='google-signin-client_id'
+            content='634747788205-6hh28obu9j2ape2qu8ch19bdkmpo2cuu.apps.googleusercontent.com' <!-- ID client google app -->
+        />
+
+        <!-- fontawesome -->
+        <link
+            rel='stylesheet'
+            href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'
+            integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp'
+            crossorigin='anonymous'
+        />
+
+        <!-- google fonts -->
+        <link
+            href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700'
+            rel='stylesheet'
+        />
+
+        <script src='https://cdn.tailwindcss.com'></script>
+    </head>
+    <body>
+        <h1 class='text-3xl font-bold underline'>
+            Hello world!
+        </h1>
+
+        <!-- Bouton "Signup with Google" -->
+        <button
+            class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+            onclick='onGoogleSignUp()'
+            id='google-signup-button'
+        >
+            Signup with Google
+        </button>
+
+        <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+        <a href="/auth/google" class=" ">Authenticate with Google</a>
+
+
+        <script
+            src='https://apis.google.com/js/platform.js'
+            async
+            defer
+        ></script>
+
+        <script src='/js/main.js'>
+            // Appelé lors du clic sur le bouton "Signup with Google" function
+        </script>
+    </body>
+</html>

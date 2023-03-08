@@ -2,16 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const clientSchema = new Schema({
-    _id: Schema.Types.ObjectId,
 
    firstname: {
         type: String ,
-        required: true
+        required: false
     },
-  
+
    birthDay:{
         type:Date,
-        required: true
+        required: false
     },
     user: {
         type: Schema.Types.ObjectId,
@@ -20,4 +19,4 @@ const clientSchema = new Schema({
     }
 });
 
-module.export = mongoose.model('Client', clientSchema);
+module.exports = mongoose.model('Client', clientSchema);
