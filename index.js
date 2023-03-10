@@ -29,6 +29,11 @@ app.use(express.static('public'));
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
+// add partials to hbs
+const hbs = require('hbs');
+hbs.registerPartials(__dirname + '/views');
+
+//
 app.use(express.json());
 app.use(
     express.urlencoded({
@@ -66,6 +71,36 @@ app.get('/login_h', function (req, res) {
 
 
     res.render('login_h');
+});
+
+app.get('/contacte', function (req, res) {
+
+
+    res.render('contacte');
+});
+
+app.get('/conditiongeneral', function (req, res) {
+
+
+    res.render('conditiongeneral');
+});
+
+app.get('/registre', function (req, res) {
+
+
+    res.render('registre');
+});
+
+app.get('/mentionlegale', function (req, res) {
+
+
+    res.render('mentionlegale');
+});
+
+app.get('/login', function (req, res) {
+
+
+    res.render('login');
 });
 
 app.use("/auth", require('./routers/authRouter'));
