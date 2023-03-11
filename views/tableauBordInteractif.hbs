@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Page Tableau de bord interactif</title>
+    <title>Historique de gains</title>
     <link href="https://unpkg.com/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="tableauBordInteractif.css"/>
 </head>
 
-  <body class="bg-gray-100 items-center flex flex-col">
+  <body class="bg-gray-100 items-center flex flex-col bg-gray-100 center h-screen bg-cover bg-center" style="background-image: url('/images/background-thetiptop1.jpg');"> 
+     {{> "header" }}
+    </div class="bg-gray-100 items-center flex flex-col">
+      
+
     <div class="">
-      <header class="flex items-center justify-between px-6 py-3">
+      <header class="flex items-center justify-between  text-white px-6 py-3">
         <div class="flex items-center">
-          <input type="text" placeholder="Email de client" class="bg-sky-500 rounded-md py-2 px-4 w-full border-2 border-black rounded" />
+          <input type="text" placeholder="Email de client" class="text-bleu-500 rounded-md py-2 px-4 w-full border-2 border-black rounded" />
         </div>
         <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-150 border-2 border-black">
             <svg class="w-4 h-4 inline-block mr-2 " viewBox="0 0 20 20">
@@ -54,19 +58,19 @@
         <div class="md:w-2/3 px-4">
           <h2 class="text-lg font-bold mb-4 text-center">Gains</h2>
         </div>
-        <table class="table-auto border border-green-900 center ">
+        <table class="table-auto border border-red-500 center bg-yellow-300">
             <thead>
               <tr>
-                <th class="px-4 py-2 border-r border-b border-green-900">Date</th>
-                <th class="px-4 py-2 border-r border-b border-green-900">Nom de grain</th>
-                <th class="px-4 py-2 border-r border-b border-green-900">Gain fourni</th>
+                <th class="px-4 py-2 border-r border-b border-red-500">Date</th>
+                <th class="px-4 py-2 border-r border-b border-red-500">Nom de grain</th>
+                <th class="px-4 py-2 border-r border-b  border-red-500">Gain fourni</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="px-4 py-2 border-r border-b border-green-900">25/02/2023</td>
-                <td class="px-4 py-2 border-r border-b border-green-900">Thé vanille gratuit</td>
-                <td class="px-4 py-2 border-b border-green-900">
+                <td class="px-4 py-2 border-r border-b border-red-500">25/02/2023</td>
+                <td class="px-4 py-2 border-r border-b border-red-500">Thé vanille gratuit</td>
+                <td class="px-4 py-2 border-b border-red-500">
 
                     <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                         Oui
@@ -77,9 +81,9 @@
                 </td>
               </tr>
               <tr>
-                <td class="px-4 py-2 border-r border-b border-green-900">26/02/2023</td>
-                <td class="px-4 py-2 border-r border-b border-green-900">Bon d'achat de 30€</td>
-                <td class="px-4 py-2 border-b border-green-900">
+                <td class="px-4 py-2 border-r border-b border-red-500">26/02/2023</td>
+                <td class="px-4 py-2 border-r border-b border-red-500">Bon d'achat de 30€</td>
+                <td class="px-4 py-2 border-b border-red-500">
 
 
                     <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded ">
@@ -91,6 +95,8 @@
 
                     </div>
 
+</div>
 
 
   </body>
+</html>
