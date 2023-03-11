@@ -129,6 +129,12 @@ app.get('/tableauBordInteractif', function (req, res) {
     res.render('tableauBordInteractif');
 });
 
+app.get('/historiqueGains', function (req, res) {
+
+
+    res.render('historiqueGains');
+});
+
 app.use("/auth", require('./routers/authRouter'));
 
 app.listen(port, () => {
