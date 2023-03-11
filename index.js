@@ -4,6 +4,8 @@ const express = require('express');
 const session = require('express-session');
 
 const app = express();
+const bodyParser = require('body-parser');
+
 const cors = require('cors');
 const port = process.env.PORT ;
 const volleyball = require('volleyball');
@@ -11,7 +13,12 @@ const validator = require('./middleware/validator');
 const userRouter = require('./routers/userRouter');
 const clientRouter = require('./routers/clientRoute');
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
 app.use('/api', clientRouter);
+app.use('/api', require('./routers/utils'));
 
 mongoose.connect('mongodb://localhost:27017/mongobb', {
     useNewUrlParser: true,
