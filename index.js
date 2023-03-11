@@ -103,6 +103,25 @@ app.get('/login', function (req, res) {
     res.render('login');
 });
 
+app.get('/statistiques', function (req, res) {
+
+
+    res.render('statistiques');
+});
+
+
+app.get('/pageDaccueil', function (req, res) {
+
+
+    res.render('pageDaccueil');
+});
+
+app.get('/tableauBordInteractif', function (req, res) {
+
+
+    res.render('tableauBordInteractif');
+});
+
 app.use("/auth", require('./routers/authRouter'));
 
 app.listen(port, () => {
