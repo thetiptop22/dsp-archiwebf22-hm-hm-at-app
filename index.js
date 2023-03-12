@@ -128,6 +128,12 @@ app.get('/historiqueGains', function (req, res) {
     res.render('historiqueGains');
 });
 
+app.get('/conditionutilisation', function (req, res) {
+
+
+    res.render('conditionutilisation');
+});
+
 app.use("/auth", require('./routers/authRouter'));
 
 app.listen(port, () => {
