@@ -43,7 +43,7 @@ app.use('/api', clientRouter);
 app.use('/api', require('./routers/utils'));
 app.use('/api', require('./routers/giftRouter'));
 
-mongoose.connect('mongodb://127.0 0.1:27017/mongobb', {
+mongoose.connect('mongodb://localhost:27017/mongobb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
