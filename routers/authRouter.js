@@ -82,7 +82,7 @@ router.get('/protected', isLoggedIn, async (req, res) => {
 
 router.get('/logout', (req, res) => {
     // req.logout();
-    req.session.destroy();
+    req.session = null
     console.log('session destroyed, GoodBye !');
     res.redirect('/');
 });

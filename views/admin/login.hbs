@@ -15,10 +15,11 @@
           <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('/images/tea.jpg');">
 
           </div>
+          <span class="error hidden">erroooooor</span>
           <div class="w-full lg:w-1/2 py-16 px-12">
             <h2  class="text-3xl mb-12 text-center text-green-800 ">Connexion </h2>
 
-            <form action="#">
+            <form id="employe_login">
                 <div id="app">
                     <div class="max-w-md m-auto mt-6">
                       <div
@@ -30,6 +31,7 @@
                             type="text"
                             placeholder="Adresse e-mail"
                             class="border border-gray rounded w-full p-3"
+                            id="email"
                           />
                         </div>
                         <div class="px-4 mb-4">
@@ -37,6 +39,7 @@
                             type="text"
                             placeholder="Mot de passe "
                             class="border border-gray rounded w-full p-3"
+                            id="password"
                           />
                         </div>
                         <div class="px-4 mb-4 flex">
@@ -107,7 +110,8 @@
         </div>
       </div>
     </div>{{> "footer" }}
-    <script type="module" src="/main.js"></script>
+        <script src='/dist/bundle.js'>
+        </script>
   </body>
 
 </html>

@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
+
 const Schema = mongoose.Schema;
 
 const giftSchema = new Schema({
-    _id: Schema.Types.ObjectId,
-
     label: {
         type: String,
         required: true,
@@ -18,6 +18,13 @@ const giftSchema = new Schema({
         type: Number,
         required: true,
     },
+    ticket: {
+        type: Number,
+        required: true,
+    },
 });
 
-module.export = mongoose.model('Gift', giftSchema);
+giftSchema.plugin(AutoIncrement, {inc_field: 'ticket', start_seq: 1000});
+
+
+module.exports = mongoose.model('Gift', giftSchema);

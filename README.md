@@ -41,3 +41,11 @@ npm run watch
 ## Your app is ready !
 http://localhost:3000
 
+
+## Authentificatio
+
+Admin : admin@gmail.com
+MDP : admin@@
+
+Employé : admin@gmail.com
+MDP : admin@@

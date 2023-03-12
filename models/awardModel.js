@@ -6,13 +6,13 @@ const awardSchema = new Schema({
 
     given:{
         type:Date,
-        required: true
+        required: false
     },
-  
+
     client: {
         type: Schema.Types.ObjectId,
         ref: 'Client',
-        required: true,
+        required: false,
     },
     ticket: {
         type: Schema.Types.ObjectId,
@@ -22,7 +22,7 @@ const awardSchema = new Schema({
     admin: {
         type: Schema.Types.ObjectId,
         ref: 'Admin',
-        required: true,
+        required: false,
     }
 });
 

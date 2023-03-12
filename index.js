@@ -3,11 +3,34 @@ const mongoose = require('mongoose');
 const express = require('express');
 const session = require('express-session');
 
+console.log(`node-redis version is ${require('redis/package.json').version}`);
+
 const app = express();
 const bodyParser = require('body-parser');
 
+/*
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 365 * 1000
+    }
+  }))
+*/
+const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session')
+
+app.set('trust proxy', 1) // trust first proxy
+app.use(cookieParser());
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
+
+
+
 const cors = require('cors');
-const port = process.env.PORT ;
+const port = process.env.PORT;
 const volleyball = require('volleyball');
 const validator = require('./middleware/validator');
 const userRouter = require('./routers/userRouter');
@@ -16,9 +39,9 @@ const clientRouter = require('./routers/clientRoute');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 app.use('/api', clientRouter);
 app.use('/api', require('./routers/utils'));
+app.use('/api', require('./routers/giftRouter'));
 
 mongoose.connect('mongodb://localhost:27017/mongobb', {
     useNewUrlParser: true,
@@ -51,9 +74,9 @@ app.use(cors());
 app.use(volleyball);
 
 app.use('/api', validator.validateUser, userRouter);
+app.use('/api', require('./routers/adminRoute'));
 
-app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
-
+// app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
 
 app.get('/', function (req, res) {
     require('./controllers/auth/google');
@@ -61,71 +84,39 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
-function isConnected(req, res, next) {
-    req.session.client ? next() : res.sendStatus(401);
-}
-
-app.get('/dashboard', isConnected,function (req, res) {
-
-    // send client data to dashboard
-    res.locals.client = req.session.client;
-    res.locals.test = 111;
-
-    res.render('dashboard');
-});
-
 app.get('/login_h', function (req, res) {
-
-
     res.render('login_h');
 });
 
 app.get('/contacte', function (req, res) {
-
-
     res.render('contacte');
 });
 
 app.get('/conditiongeneral', function (req, res) {
-
-
     res.render('conditiongeneral');
 });
 
 app.get('/registre', function (req, res) {
-
-
     res.render('registre');
 });
 
 app.get('/mentionlegale', function (req, res) {
-
-
     res.render('mentionlegale');
 });
 
 app.get('/login', function (req, res) {
-
-
     res.render('login');
 });
 
 app.get('/statistiques', function (req, res) {
-
-
     res.render('statistiques');
 });
 
-
 app.get('/pageDaccueil', function (req, res) {
-
-
     res.render('pageDaccueil');
 });
 
 app.get('/tableauBordInteractif', function (req, res) {
-
-
     res.render('tableauBordInteractif');
 });
 
@@ -153,7 +144,8 @@ app.get('/politiquecookiesutilisation', function (req, res) {
     res.render('politiquecookiesutilisation');
 });
 
-app.use("/auth", require('./routers/authRouter'));
+app.use('/auth', require('./routers/authRouter'));
+app.use('/', require('./routers/pagesHtml'));
 
 app.listen(port, () => {
     console.log(
