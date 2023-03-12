@@ -76,12 +76,17 @@ app.use(volleyball);
 app.use('/api', validator.validateUser, userRouter);
 app.use('/api', require('./routers/adminRoute'));
 
-// app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
+app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
 
 app.get('/', function (req, res) {
     require('./controllers/auth/google');
 
     res.render('index');
+});
+app.get('/h', function (req, res) {
+    require('./controllers/auth/google');
+
+    res.render('index_h');
 });
 
 app.get('/login_h', function (req, res) {

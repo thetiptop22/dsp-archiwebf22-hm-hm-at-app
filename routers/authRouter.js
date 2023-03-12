@@ -72,7 +72,7 @@ router.get('/protected', isLoggedIn, async (req, res) => {
             console.log(`client : ${JSON.stringify(client)}`);
             console.log(client);
             req.session.client = client
-            res.redirect('/dashboard');
+            res.redirect('/client/Account');
         })
         .catch((error) => {
             console.log(error);
@@ -82,10 +82,18 @@ router.get('/protected', isLoggedIn, async (req, res) => {
 
 router.get('/logout', (req, res) => {
     // req.logout();
-    req.session = null
-    console.log('session destroyed, GoodBye !');
+    req.session.admin = null
+    console.log('admin session destroyed, GoodBye !');
     res.redirect('/');
 });
+
+router.get('/client/logout', (req, res) => {
+    // req.logout();
+    req.session = null
+    console.log('client session destroyed, GoodBye !');
+    res.redirect('/');
+});
+
 
 router.get('/google/failure', (req, res) => {
     res.send('Failed to authenticate..');

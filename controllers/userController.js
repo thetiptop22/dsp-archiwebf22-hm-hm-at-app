@@ -1,6 +1,8 @@
 const User = require('../models/userModel');
 const Client = require('../models/clientModel');
 
+const bcrypt = require('bcryptjs');
+
 // Create a new user
 exports.create = async function (req, res) {
     try {
@@ -21,6 +23,8 @@ exports.createClient = async function (req, res) {
     console.log("creating client ...");
     try {
         const user = new User(req.body);
+        user.password = await bcrypt.hash(user.password, 10);
+
         await user.save(async function (err) {
             if (err) {
                 res.status(400).send(err);
