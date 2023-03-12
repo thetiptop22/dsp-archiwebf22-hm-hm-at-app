@@ -52,7 +52,20 @@
         class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
       >
         <i class="bi bi-box-arrow-in-right"></i>
-        <span class="text-[15px] ml-4 text-gray-200 font-bold">Logout</span>
+        <span class="text-[15px] ml-4 text-gray-200 font-bold">Déconnexion</span>
+      </div>
+    </div>
+
+    
+      <div class="my-4 bg-gray-600 h-[1px]"></div>
+     
+
+     
+      <div
+        class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+      >
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span class="text-[15px] ml-4 text-gray-200 font-bold" id="user">abdel</span>
       </div>
     </div>
 
@@ -67,5 +80,16 @@
         document.querySelector(".sidebar").classList.toggle("hidden");
       }
     </script>
+    <script> 
+	today=new Date() 
+	if(today.getHours() >= 0 && today.getHours() < 18) /* A noter que si on mettait <= Bonjour continuerait jusqu'à 18h59 et qu'ici il s'arrête à 18h */ 
+	{      
+	document.getElementById('bonjour').innerHTML='Bonjour'; 
+	} 
+	else 
+	{      
+	document.getElementById('bonjour').innerHTML='Bonsoir'; 
+	} 
+	</script>
   </body>
 </html>
