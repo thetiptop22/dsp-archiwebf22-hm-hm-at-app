@@ -134,6 +134,12 @@ app.get('/conditionutilisation', function (req, res) {
     res.render('conditionutilisation');
 });
 
+app.get('/modalitesParticipation', function (req, res) {
+
+
+    res.render('modalitesParticipation');
+});
+
 app.use("/auth", require('./routers/authRouter'));
 
 app.listen(port, () => {
