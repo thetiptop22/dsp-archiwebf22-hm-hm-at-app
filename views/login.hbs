@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src='https://cdn.tailwindcss.com'></script>
     <title>Login</title>
+
   </head>
 
   <body style="background-image: url('/images/papear.jpg');" class="bg-no-repeat bg-cover bg-center">
@@ -32,6 +33,8 @@
                         <p class="text-xl text-center mt-8 mb-8 bg-gray-100 text-center text-gray-700 py-5">Tapez votre e-mail et votre mot de passe</p>
                         <div class="px-4 mb-4">
                           <input
+                          name="fname"
+                          id="fname"
                             type="text"
                             placeholder="Adresse e-mail"
                             class="border border-gray rounded w-full p-3"
@@ -40,7 +43,9 @@
                         </div>
                         <div class="px-4 mb-4">
                           <input
-                            type="text"
+                          id="pwd"
+                          name="pwd"
+                            type="password"
                             placeholder="Mot de passe "
                             class="border border-gray rounded w-full p-3"
                             id="password"
@@ -58,7 +63,9 @@
                         </div>
                         <div class="px-4 mb-6">
                           <button
-                            class="border border-blue-500 bg-blue-600 rounded w-full px-4 py-3 text-white font-semibold"
+                            class="border border-blue-500 bg-blue-600 
+                            rounded w-full px-4 py-3 text-white font-semibold"
+                            name="" value="login" onclick="verification()" 
                           >
                             Connexion
                           </button>

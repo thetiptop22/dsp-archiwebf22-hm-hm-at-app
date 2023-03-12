@@ -96,6 +96,27 @@ app.get('/login_h', function (req, res) {
 app.get('/contacte', function (req, res) {
     res.render('contacte');
 });
+app.get('/dashboard', function (req, res) {
+
+
+    res.render('dashboard');
+});
+app.get('/dashboardx', function (req, res) {
+
+
+    res.render('dashboardx');
+});
+app.get('/sidebar', function (req, res) {
+
+
+    res.render('sidebar');
+});
+app.get('/historiqueGain', function (req, res) {
+
+
+    res.render('historiqueGain');
+});
+
 
 app.get('/conditiongeneral', function (req, res) {
     res.render('conditiongeneral');
