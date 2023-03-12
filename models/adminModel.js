@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const adminSchema = new Schema({
-    _id: Schema.Types.ObjectId,
 
     user: {
         type: Schema.Types.ObjectId,
@@ -12,10 +11,10 @@ const adminSchema = new Schema({
     role: {
         type : String,
         enum:['admin','employe'],
-        default:'user'
+        required : true
 
     }
- 
+
 });
 
-module.export = mongoose.model('Admin', adminSchema);
+module.exports = mongoose.model('Admin', adminSchema);

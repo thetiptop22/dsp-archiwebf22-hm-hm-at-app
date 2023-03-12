@@ -6,6 +6,8 @@ const AdminController = require('../controllers/adminController');
 router.post('/', AdminController.create);
 
 //Get admin by login
-router.post('/login', AdminController.login);
+router.get('/admin/:email', AdminController.findbyemail);
+
+router.post("/admins/init", AdminController.initAdmins);
 
 module.exports = router;
