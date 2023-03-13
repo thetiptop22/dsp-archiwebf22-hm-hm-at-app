@@ -4,7 +4,8 @@ const passport = require('passport');
 router.use(passport.initialize());
 router.use(passport.session());
 
-const fetch = require('node-fetch')
+const fetch = (...args) =>
+	import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 
 function isLoggedIn(req, res, next) {
