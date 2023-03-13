@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
+  type : "module",
   "scripts": {
     "test": "jest --passWithNoTests",
     "watch": "export NODE_ENV=development&& nodemon -e js,json,hbs index.js --trace-sync-io",
