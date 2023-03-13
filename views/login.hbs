@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src='https://cdn.tailwindcss.com'></script>
     <title>Login</title>
+
   </head>
 
   <body style="background-image: url('/images/papear.jpg');" class="bg-no-repeat bg-cover bg-center">
@@ -21,7 +22,8 @@
           </div>
           <span class="error hidden">erroooooor</span>
           <div class="w-full lg:w-1/2 py-16 px-12">
-            <h2  class="text-3xl mb-12 text-center text-green-800 ">Administration </h2>
+     
+             <h1  class="text-3xl mb-12 text-center text-green-800 ">Connexion</h1>
 
             <form id="client_login">
                 <div id="app">
@@ -32,6 +34,8 @@
                         <p class="text-xl text-center mt-8 mb-8 bg-gray-100 text-center text-gray-700 py-5">Tapez votre e-mail et votre mot de passe</p>
                         <div class="px-4 mb-4">
                           <input
+                          name="fname"
+                          id="fname"
                             type="text"
                             placeholder="Adresse e-mail"
                             class="border border-gray rounded w-full p-3"
@@ -40,7 +44,9 @@
                         </div>
                         <div class="px-4 mb-4">
                           <input
-                            type="text"
+                          id="pwd"
+                          name="pwd"
+                            type="password"
                             placeholder="Mot de passe "
                             class="border border-gray rounded w-full p-3"
                             id="password"
@@ -58,10 +64,18 @@
                         </div>
                         <div class="px-4 mb-6">
                           <button
-                            class="border border-blue-500 bg-blue-600 rounded w-full px-4 py-3 text-white font-semibold"
-                          >
+                            class="border border-blue-500 bg-blue-600 
+                            rounded w-full px-4 py-3 text-white font-semibold px-4 mb-4 "
+                            name="" value="login"  
+                          />
                             Connexion
                           </button>
+                            <div class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-red-600 " >
+      <p id='demo' class="self-center"><strong>Danger </strong>This is Danger alert.</p>
+      <strong class="text-xl align-center cursor-pointer alert-del"
+        >&times;</strong
+      >
+    </div>
                           <hr class="my-6 border-gray-300 w-full">
 
         <button type="button" class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300">
