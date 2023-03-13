@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs';
+import fetch from 'node-fetch';
 
 console.log('hello world');
 

@@ -43,7 +43,7 @@ app.use('/api', clientRouter);
 app.use('/api', require('./routers/utils'));
 app.use('/api', require('./routers/giftRouter'));
 
-mongoose.connect('mongodb://mongo:27017/mongobb', {
+mongoose.connect('mongodb://localhost:27017/mongobb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -168,6 +168,11 @@ app.get('/politiquecookiesutilisation', function (req, res) {
 
 
     res.render('politiquecookiesutilisation');
+});
+app.get('/quiSommeNous', function (req, res) {
+
+
+    res.render('quiSommeNous');
 });
 
 app.use('/auth', require('./routers/authRouter'));
