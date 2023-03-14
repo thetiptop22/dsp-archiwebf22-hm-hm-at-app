@@ -7,7 +7,7 @@ if (true) {
 }
 
 const msgError = (msg) => {
-    const error = document.querySelector('span.error');
+    const error = document.querySelector('.error');
     error.classList.remove('hidden');
     error.innerHTML = msg;
     console.log('errooor');

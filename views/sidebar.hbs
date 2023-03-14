@@ -11,7 +11,7 @@
     />
   </head>
   <body class="bg-lime-50">
-    
+
     <span
       class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
       onclick="openSidebar()"
@@ -24,10 +24,10 @@
       <div class="text-gray-100 text-xl">
         <div class="p-2.5 mt-1 flex items-center">
           <a href="/" class="flex items-center py-4 px-2">
-								<img src="./images/logo.jpeg" alt="Logo" class="h-8 w-8 mr-2">
+								<img src="/images/logo.jpeg" alt="Logo" class="h-8 w-8 mr-2">
 								<span class="font-semibold text-lime-500 text-lg">TheTipTop</span>
 							</a>
-          
+
           <i
             class="bi bi-x cursor-pointer ml-28 lg:hidden"
             onclick="openSidebar()"
@@ -35,33 +35,33 @@
         </div>
         <div class="my-2 bg-gray-600 h-[1px]"></div>
       </div>
-     
+
       <div
         class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
       >
       <a href="/">
         <i class="bi bi-house-door-fill"></i>
-        <span class="text-[15px] ml-4 text-gray-200 font-bold">Home</span></a>
+        <span class="text-[15px] ml-4 text-gray-200 font-bold">Accueil</span></a>
       </div>
-      
-     
-      <div class="my-4 bg-gray-600 h-[1px]"></div>
-     
 
-     
-      <div
+
+      <div class="my-4 bg-gray-600 h-[1px]"></div>
+
+
+
+      <a href="/auth/client/logout"><div
         class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
       >
         <i class="bi bi-box-arrow-in-right"></i>
         <span class="text-[15px] ml-4 text-gray-200 font-bold">Déconnexion</span>
-      </div>
+      </div> </a>
     </div>
 
-    
-      <div class="my-4 bg-gray-600 h-[1px]"></div>
-     
 
-     
+      <div class="my-4 bg-gray-600 h-[1px]"></div>
+
+
+
       <div
         class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
       >
@@ -81,16 +81,16 @@
         document.querySelector(".sidebar").classList.toggle("hidden");
       }
     </script>
-    <script> 
-	today=new Date() 
-	if(today.getHours() >= 0 && today.getHours() < 18) /* A noter que si on mettait <= Bonjour continuerait jusqu'à 18h59 et qu'ici il s'arrête à 18h */ 
-	{      
-	document.getElementById('bonjour').innerHTML='Bonjour'; 
-	} 
-	else 
-	{      
-	document.getElementById('bonjour').innerHTML='Bonsoir'; 
-	} 
+    <script>
+	today=new Date()
+	if(today.getHours() >= 0 && today.getHours() < 18) /* A noter que si on mettait <= Bonjour continuerait jusqu'à 18h59 et qu'ici il s'arrête à 18h */
+	{
+	document.getElementById('bonjour').innerHTML='Bonjour';
+	}
+	else
+	{
+	document.getElementById('bonjour').innerHTML='Bonsoir';
+	}
 	</script>
   </body>
 </html>

@@ -44,9 +44,12 @@ http://localhost:3000
 
 ## Authentificatio
 
+Pour des raison de sécurité, le lien d'authentification pour l'administration n'est pas indexé dans le site web, dont voici le lien : \n
+http://dsp-archiwebf22-hm-hm-at.fr/admin
+
 Admin : admin@gmail.com \n
 MDP : admin@@ \n \n
-
+ 
 Employé : employe@gmail.com \n
 MDP : admin@@ \n \n
 

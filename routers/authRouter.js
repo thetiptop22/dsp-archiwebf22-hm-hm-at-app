@@ -81,7 +81,7 @@ router.get('/protected', isLoggedIn, async (req, res) => {
         });
 });
 
-router.get('/logout', (req, res) => {
+router.get('/admin/logout', (req, res) => {
     // req.logout();
     req.session.admin = null
     console.log('admin session destroyed, GoodBye !');
@@ -90,7 +90,7 @@ router.get('/logout', (req, res) => {
 
 router.get('/client/logout', (req, res) => {
     // req.logout();
-    req.session = null
+    req.session.client = null
     console.log('client session destroyed, GoodBye !');
     res.redirect('/');
 });
