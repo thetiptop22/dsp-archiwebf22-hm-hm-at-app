@@ -44,8 +44,13 @@ http://localhost:3000
 
 ## Authentificatio
 
-Admin : admin@gmail.com
-MDP : admin@@
+Admin : admin@gmail.com \n
+MDP : admin@@ \n \n
 
-Employé : admin@gmail.com
-MDP : admin@@
+Employé : employe@gmail.com \n
+MDP : admin@@ \n \n
+
+Idenifiants Git : \n \n
+
+thetiptop.project@gmail.com \n
+thetiptop.project2023
