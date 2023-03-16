@@ -119,6 +119,11 @@ app.get('/historiqueGain', function (req, res) {
     res.render('historiqueGain');
 });
 
+app.get('/test', function (req, res) {
+
+
+    res.render('test');
+});
 
 app.get('/conditiongeneral', function (req, res) {
     res.render('conditiongeneral');

@@ -1,0 +1,102 @@
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: arial;
+  background: #131416;
+}
+
+label {
+  position: relative;
+}
+
+label input {
+  font-size: 1em;
+  color: #f9f9f9;
+  background: transparent;
+
+  padding: 1rem 1.2rem;
+  width: 350px;
+
+  border-radius: 5px;
+  border: 2px solid #7a7a7a;
+
+  transition: all 0.2s;
+}
+
+label input:focus {
+  border-color: #ff4754;
+}
+
+label .password-icon {
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 20px;
+
+  color: #f9f9f9;
+  transition: all 0.2s;
+}
+
+label .password-icon:hover {
+  cursor: pointer;
+  color: #ff4754;
+}
+
+label .password-icon .feather-eye-off {
+  display: none;
+}
+</style>
+<label>
+  <input type="password" placeholder="Mot de passe">
+
+  <div class="password-icon">
+    <i data-feather="eye"></i>
+    <i data-feather="eye-off"></i>
+  </div>
+</label>
+
+<!-- ICON SCRIPT -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+<script>
+    const eye = document.querySelector(".feather-eye");
+const eyeoff = document.querySelector(".feather-eye-off");
+const passwordField = document.querySelector("input[type=password]");
+
+eye.addEventListener("click", () => {
+  eye.style.display = "none";
+  eyeoff.style.display = "block";
+
+  passwordField.type = "text";
+});
+
+eyeoff.addEventListener("click", () => {
+  eyeoff.style.display = "none";
+  eye.style.display = "block";
+
+  passwordField.type = "password";
+});
+
+</script>

@@ -9,10 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src='https://cdn.tailwindcss.com'></script>
     <title>Login</title>
+<style>
+  label .password-icon {
+  display: flex;
+  transition: all 0.2s;
+}
+label .password-icon .feather-eye-off {
+  display: none;
+}
+</style>
 
   </head>
 
   <body style="background-image: url('/images/papear.jpg');" class="bg-no-repeat bg-cover bg-center">
+ 
      {{> "header" }}
     <div class="min-h-screen w-100 py-40 h-100 W-100 " >
       <div class="container mx-auto">
@@ -41,18 +51,26 @@
                           />
                         </div>
                         <div class="px-4 mb-4">
+                          <label>
                           <input
                           name="pwd"
                             type="password"
                             placeholder="Mot de passe "
-                            class="border border-gray rounded w-full p-3"
+                            class="password-icon border border-gray rounded w-full p-3"
                             id="password"
-                          />
+
+                            
+                              />  
+                               <div class="password-icon ">
+                                <i data-feather="eye"></i>
+                                <i data-feather="eye-off"></i>
+                               </div>
+                              </label> 
                         </div>
                         <div class="px-4 mb-4 flex">
                           <div class="w-1/2">
 
-                          </div>
+                      </div>
                           <div class="w-1/2 text-right">
                             <a href="#" class="font-semibold no-underline text-black"
                               >Mot de passe oublié?</a
@@ -122,8 +140,27 @@
             defer
         ></script>
 
-        <script src='/dist/bundle.js'>
-        </script>
+        <script src='/dist/bundle.js'>  </script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script> feather.replace();</script>
+<script>
+const eye = document.querySelector(".feather-eye");
+const eyeoff = document.querySelector(".feather-eye-off");
+const passwordField = document.querySelector("input[type=password]");
+eye.addEventListener("click", () => {
+  eye.style.display = "none";
+  eyeoff.style.display = "block";
+  passwordField.type = "text";
+  
+});
+
+eyeoff.addEventListener("click", () => {
+  eyeoff.style.display = "none";
+  eye.style.display = "block";
+  passwordField.type = "password";
+});
+ 
+</script>
   </body>
 
 </html>
