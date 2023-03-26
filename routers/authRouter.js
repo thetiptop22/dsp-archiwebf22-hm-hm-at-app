@@ -73,6 +73,7 @@ router.get('/protected', isLoggedIn, async (req, res) => {
             console.log(`client : ${JSON.stringify(client)}`);
             console.log(client);
             req.session.client = client
+            res.locals.client = client
             res.redirect('/client/Account');
         })
         .catch((error) => {

@@ -20,6 +20,7 @@ router.put('/:id', ClientController.update);
 router.post('/client/session', (req, res) => {
     console.log('client', req.body.client);
     req.session.client = req.body.client;
+    res.locals.client = req.body.client;
     res.status(200).json({ success: true });
 });
 

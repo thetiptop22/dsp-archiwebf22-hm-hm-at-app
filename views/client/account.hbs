@@ -23,8 +23,7 @@
 
                 <div class="mb-2">
                     <label for="name" class="block mb-1 text-lg font-medium text-black">Nom : <span class="text-xs ">
-                        </span>
-                    </label>
+                            {{client.user.lastName}}</span></label>
 
                 </div>
                 <div class="mb-2">
@@ -34,7 +33,7 @@
 
                 </div>
                 <div class="mb-2">
-                    <label for="telephone" class="block mb-2 text-lg font-medium text-black">L'email : <span
+                    <label for="telephone" class="block mb-2 text-lg font-medium text-black">Email : <span
                             class="text-xs">{{client.user.email}}</span></label>
 
                 </div>
@@ -61,11 +60,13 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
+                    <form>
                     <input type="search" id="default-search"
                         class="px-4 mb-4 block w-full p-4 pl-10 text-sm text-amber-900 border border-amber-300 rounded-lg bg-amber-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-amber-700 dark:border-amber-600 dark:placeholder-amber-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Numéro de ticket ..." required>
                     <button type="submit"
                         class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Chercher</button>
+               </form>
                 </div>
 
                 <table class="table-auto border border-red-500 center  justify-center w-full  ">
