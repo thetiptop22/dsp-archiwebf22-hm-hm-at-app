@@ -33,9 +33,15 @@ function isClientConnected(req, res, next) {
 router.get('/admin/dashboard', isConnected, function (req, res) {
     // send client data to dashboard
     res.locals.admin = req.session.admin;
-    res.locals.test = 111;
 
     res.render('admin/dashboard');
+});
+
+router.get('/admin/statistiques', isConnected, function (req, res) {
+    // send client data to dashboard
+    res.locals.admin = req.session.admin;
+
+    res.render('statistiques');
 });
 
 router.get('/client/Account', isClientConnected, function (req, res) {

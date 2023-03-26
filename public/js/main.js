@@ -103,7 +103,15 @@ if (employe_login_form)
                         })
                             .then((res) => {
                                 if (res.status === 200) {
-                                    window.location.href = '/admin/dashboard';
+                                    console.log("data[0].role", data[0].role)
+                                    switch(data[0].role){
+                                        case 'admin':
+                                            window.location.href = '/admin/dashboard';
+                                            break;
+                                        case 'employe':
+                                            window.location.href = '/admin/statistiques';
+                                            break;
+                                    }
                                 }
                             })
                             .catch((err) => {

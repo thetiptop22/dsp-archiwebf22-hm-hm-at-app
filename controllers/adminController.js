@@ -79,6 +79,7 @@ exports.initAdmins = async function (req, res) {
     // Create a new admin
     const passwordHashed = await bcryptjs.hashSync('admin@@', 10);
     NEW_ADMIN.user.password = passwordHashed;
+    NEW_EMPLOYE.user.password = passwordHashed;
 
     console.log('creating admin and employe ...');
     try {

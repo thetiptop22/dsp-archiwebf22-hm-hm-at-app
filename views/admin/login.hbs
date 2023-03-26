@@ -1,83 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src='https://cdn.tailwindcss.com'></script>
     <title>Login</title>
-  </head>
+</head>
 
-  <body style="background-image: url('/images/papear.jpg');" class="bg-no-repeat bg-cover bg-center">
-     {{> "header" }}
-    <div class="min-h-screen w-100 py-40 h-100 W-100 " >
-      <div class="container mx-auto">
-        <div class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
-          <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('/images/tea.jpg');">
+<body style="background-image: url('/images/papear.jpg');" class="bg-no-repeat bg-cover bg-center">
+    {{> "header" }}
+    <div class="min-h-screen w-100 py-40 h-100 W-100 ">
+        <div class="container mx-auto">
+            <div
+                class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
+                <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center"
+                    style="background-image: url('/images/tea.jpg');">
 
-          </div>
-          <div class="w-full lg:w-1/2 py-16 px-12">
-            <h2  class="text-3xl mb-12 text-center text-green-800 ">Administration </h2>
+                </div>
+                <div class="w-full lg:w-1/2 py-16 px-12">
+                    <h2 class="text-3xl mb-12 text-center text-green-800 ">Administration </h2>
 
-            <form id="employe_login">
-                <div id="app">
-                    <div class="max-w-md m-auto mt-6">
-                      <div
-                        class="border-t-4 border-blue-600 overflow-hidden rounded shadow-lg"
-                      >
-                        <p class="text-xl text-center mt-8 mb-8 bg-gray-100 text-center text-gray-700 py-5">Tapez votre e-mail et votre mot de passe</p>
-                        <div class="px-4 mb-4">
-                          <input
-                            type="text"
-                            placeholder="Adresse e-mail"
-                            class="border border-gray rounded w-full p-3"
-                            id="email"
-                          />
-                        </div>
-                        <div class="px-4 mb-4">
-                          <input
-                            type="text"
-                            placeholder="Mot de passe "
-                            class="border border-gray rounded w-full p-3"
-                            id="password"
-                          />
-                        </div>
-                        <div class="px-4 mb-4 flex">
-                          <div class="w-1/2">
+                    <form id="employe_login">
+                        <div id="app">
+                            <div class="max-w-md m-auto mt-6">
+                                <div class="border-t-4 border-blue-600 overflow-hidden rounded shadow-lg">
+                                    <p class="text-xl text-center mt-8 mb-8 bg-gray-100 text-center text-gray-700 py-5">
+                                        Tapez votre e-mail et votre mot de passe</p>
+                                    <div class="px-4 mb-4">
+                                        <input type="text" placeholder="Adresse e-mail"
+                                            class="border border-gray rounded w-full p-3" id="email" />
+                                    </div>
+                                    <div class="px-4 mb-4">
+                                        <input type="text" placeholder="Mot de passe "
+                                            class="border border-gray rounded w-full p-3" id="password" />
+                                    </div>
+                                    <div class="px-4 mb-4 flex">
+                                        <div class="w-1/2">
 
-                          </div>
-                          <div class="w-1/2 text-right">
-                            <a href="#" class="font-semibold no-underline text-black"
-                              >Mot de passe oublié?</a
-                            >
-                          </div>
-                        </div>
-                        <div class="px-4 mb-6">
-                          <button
-                            class="border border-blue-500 bg-blue-600 rounded w-full px-4 py-3 text-white font-semibold"
-                          >
-                            Connexion
-                          </button>
-                                                      <div class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-red-600  error hidden" >
-      <p id='demo' class="self-center"></p>
-      <strong class="text-xl align-center cursor-pointer alert-del"
-        >&times;</strong
-
-                          <hr class="my-6 border-gray-300 w-full">
+                                        </div>
+                                        <div class="w-1/2 text-right">
+                                            <a href="#" class="font-semibold no-underline text-black">Mot de passe
+                                                oublié?</a>
+                                        </div>
+                                    </div>
+                                    <div class="px-4 mb-6">
+                                        <button
+                                            class="border border-blue-500 bg-blue-600 rounded w-full px-4 py-3 text-white font-semibold">
+                                            Connexion
+                                        </button>
+                                        <div
+                                            class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-red-600  error hidden">
+                                            <p id='demo' class="self-center"></p>
+                                            <strong
+                                                class="text-xl align-center cursor-pointer alert-del">&times;</strong
+                                                <hr class="my-6 border-gray-300 w-full">
 
 
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </form>
-          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>{{> "footer" }}
-        <script src='/dist/bundle.js'>
-        </script>
-  </body>
+    <script src='/dist/bundle.js'>
+    </script>
+</body>
 
 </html>
-
-

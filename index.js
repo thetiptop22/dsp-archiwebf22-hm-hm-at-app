@@ -39,6 +39,7 @@ const clientRouter = require('./routers/clientRoute');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use('/api', require('./routers/awardRoute'));
 app.use('/api', clientRouter);
 app.use('/api', require('./routers/utils'));
 app.use('/api', require('./routers/giftRouter'));
