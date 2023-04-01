@@ -14,9 +14,11 @@ const awardSchema = new Schema({
         required: true,
     },
     ticket: {
-        type: Number,
+        type: Schema.Types.Number,
         required: true,
-        unique: [true, 'Ce tiket est déja utilisé']
+        unique: [true, 'Ce tiket est déja utilisé'],
+        ref: 'Gift',
+
     },
     admin: {
         type: Schema.Types.ObjectId,

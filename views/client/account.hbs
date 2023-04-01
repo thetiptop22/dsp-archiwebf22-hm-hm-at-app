@@ -34,7 +34,7 @@
                 </div>
                 <div class="mb-2">
                     <label for="telephone" class="block mb-2 text-lg font-medium text-black">Email : <span
-                            class="text-xs">{{client.user.email}}</span></label>
+                            class="text-xs">{{client.user.email}} </span></label>
 
                 </div>
 
@@ -44,11 +44,29 @@
                 <div class="bg-black w-full flex justify-center text-withe text-xl mb-2 lg:mb-5">
                     Gains
                 </div>
-                <div
-                    class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-red-600 px-4 mb-4 hidden error">
-                    <p id='demo' class="self-center">Une erreur s'est produite.</p>
-                    <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
-                </div>
+                <  <!-- Alert Danger  -->
+  <div
+    class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-red-600 error hidden mb-5"
+  >
+    <p class="self-center"><strong>Danger </strong>This is Danger alert.</p>
+    <strong class="text-xl align-center cursor-pointer alert-del"
+      >&times;</strong
+    >
+  </div>
+
+
+
+  <!-- Alert Success  -->
+  <div
+    class="flex justify-between text-green-200 shadow-inner rounded p-3 bg-green-600 mb-4 success {{#if ticket_added }} {{^}} hidden {{/if}}"
+  >
+    <p class="self-center">
+      <strong>Votre ticket est bien été enregisté. </strong>
+    </p>
+    <strong class="text-xl align-center cursor-pointer alert-del"
+      >&times;</strong
+    >
+  </div>
 
                 <label for="default-search"
                     class="mb-2 text-sm font-medium text-amber-900 sr-only dark:text-white"></label>
@@ -60,83 +78,65 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
-                    <form>
-                    <input type="search" id="default-search"
+                    <form id="ticket_search">
+                    <input type="search" id="ticket_number"
                         class="px-4 mb-4 block w-full p-4 pl-10 text-sm text-amber-900 border border-amber-300 rounded-lg bg-amber-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-amber-700 dark:border-amber-600 dark:placeholder-amber-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Numéro de ticket ..." required>
+                        <input  class="hidden" id="client" value="{{client._id}}"/>
                     <button type="submit"
-                        class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Chercher</button>
+                        class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajouter</button>
                </form>
                 </div>
+
+                {{#if awards.length}}
 
                 <table class="table-auto border border-red-500 center  justify-center w-full  ">
                     <thead>
                         <tr>
                             <th class="text-black px-4 py-2 border-r border-b border-red-500">
-                                Date
+                                Libelle
 
                             </th>
                             <th class=" text-black px-4 py-2 border-r border-b border-red-500">
-                                Nom
+                                N° ticket
 
                             </th>
                             </th>
                             <th class="text-black px-4 py-2 border-r border-b border-red-500">
-                                Gain fourni
+                                Gain
 
                             </th>
 
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each awards}}
+
                         <tr>
                             <td class="text-black px-4 py-2 border-r border-b border-red-500">
-                                25/02/2023
-
+                                    {{this.ticket.label}} ({{this.ticket.value}} EUR)
                             </td>
                             <td class="text-black px-4 py-2 border-r border-b border-red-500">
-                                Thé vanille gratuit
+                                    {{this.ticket.ticket}}
 
                             </td>
-                            <td class=" px-4 py-2 border-r border-b border-red-500">
-                                <label class="relative inline-flex items-center mb-5 cursor-pointer">
-                                    <input type="checkbox" value="" disabled="true" checked="true" class="sr-only peer">
-                                    <div
-                                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
-                                    </div>
-                                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                        Récupéré</span>
+                            <td class=" px-4 py-2 border-r border-b border-red-500 text-black">
+                                <label class="relative inline-flex items-center my-5 cursor-pointer">
+                                    {{#if this.given }} Bien récupéré :) {{^}} Disponible au magasin {{/if}}
                                 </label>
 
                             </td>
                         </tr>
-                        <tr>
-                            <td class=" text-black px-4 py-2 border-r border-b border-red-500">
-                                26/02/2023
+                        {{/each}}
 
-                            </td>
-                            <td class=" text-black px-4 py-2 border-r border-b border-red-500">
-                                Bon d'achat de 30€
 
-                            </td>
-                            <td class="px-4 py-2 border-r border-b border-red-500">
-                                <label class="relative inline-flex items-center mb-5 cursor-pointer">
-                                    <input type="checkbox" value=""  checked="none" class="sr-only peer">
-                                    <div
-                                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
-                                    </div>
-                                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                        Récupéré</span>
-                                </label>
-
-                            </td>
-
-                        </tr>
                     </tbody>
                 </table>
 
 
+                <p class="text-black mt-4">* Rendez-vous à notre boutique pour récupérér vos gains</p>
 
+                {{/if}}
 
 
 
@@ -146,7 +146,8 @@
     </div>
 
 
-
+        <script src='/dist/bundle.js'>
+        </script>
 
 </body>
 

@@ -17,7 +17,7 @@ exports.create = function (req, res) {
 // Get a ticket by number
 exports.findBynumber = function (req, res) {
     try {
-        Ticket.findOne({number:req.body.number}, function (err, ticket) {
+        Ticket.findOne({number:req.params.number}, function (err, ticket) {
             if (err) throw err;
             else res.json(ticket);
         });

@@ -20,7 +20,6 @@ router.post('/api/client/session', (req, res) => {
     res.status(200).json({ success: true });
 });
 
-
 function isConnected(req, res, next) {
     req.session.admin ? next() : res.sendStatus(401);
 }
@@ -28,7 +27,6 @@ function isConnected(req, res, next) {
 function isClientConnected(req, res, next) {
     req.session.client ? next() : res.sendStatus(401);
 }
-
 
 router.get('/admin/dashboard', isConnected, function (req, res) {
     // send client data to dashboard
@@ -44,10 +42,24 @@ router.get('/admin/statistiques', isConnected, function (req, res) {
     res.render('statistiques');
 });
 
-router.get('/client/Account', isClientConnected, function (req, res) {
+router.get('/client/Account', isClientConnected, async function (req, res) {
     res.locals.client = req.session.client;
-    res.locals.test = 444;
+    const userId = res.locals.client._id.toString();
+    const response = await fetch(
+        `${process.env.HOST}:${process.env.PORT}/api/awards/${userId}`,
+        {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }
+    );
+
+    const data = await response.json();
+    res.locals.awards = data;
+    if(req.query.ticket_added)
+        res.locals.ticket_added = req.query.ticket_added;
     res.render('client/account');
-})
+});
 
 module.exports = router;

@@ -6,7 +6,7 @@ const TicketController = require('../controllers/ticketController');
 router.post('/', TicketController.create);
 
 // Get a Ticket by number
-router.get('/:number', TicketController.read);
+router.get('/gift/:number', TicketController.findBynumber);
 
 
 

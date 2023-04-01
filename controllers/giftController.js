@@ -19,7 +19,7 @@ exports.create = function (req, res) {
 // Get a gift by id
 exports.read = function (req, res) {
     try {
-        Gift.findById(req.params.id, function (err, gift) {
+        Gift.findOne({ticket:req.params.number}, function (err, gift) {
             if (err) res.status(400).send(err);
             else res.json(gift);
         });
