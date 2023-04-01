@@ -110,11 +110,11 @@ if (employe_login_form)
                                     switch (data[0].role) {
                                         case 'admin':
                                             window.location.href =
-                                                '/admin/dashboard';
+                                                '/admin/statistiques';
                                             break;
                                         case 'employe':
                                             window.location.href =
-                                                '/admin/statistiques';
+                                                '/admin/dashboard';
                                             break;
                                     }
                                 }

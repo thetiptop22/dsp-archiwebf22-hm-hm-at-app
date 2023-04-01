@@ -35,11 +35,40 @@ router.get('/admin/dashboard', isConnected, function (req, res) {
     res.render('admin/dashboard');
 });
 
-router.get('/admin/statistiques', isConnected, function (req, res) {
+router.get('/admin/statistiques', isConnected, async function (req, res) {
     // send client data to dashboard
     res.locals.admin = req.session.admin;
 
-    res.render('statistiques');
+    fetch(`http://localhost:3000/api/awards`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then((res) => res.json())
+        .then(async (data) => {
+            const stats = {
+                participants: [],
+                gainsEURTotal: 0,
+                gains: 0,
+                tauxParticipation: 0,
+            };
+
+            if (data.length == 0) return res.render('statistiques');
+            else {
+                data.forEach((award) => {
+                    if (!stats.participants.includes(award.client))
+                        stats.participants.push(award.client);
+
+                    stats.gainsEURTotal += award.ticket.value;
+                });
+                stats.gains = data.length;
+                stats.tauxParticipation =
+                    (stats.gains / stats.participants.length) * 100;
+                res.locals.stats = stats;
+                return res.render('statistiques');
+            }
+        });
 });
 
 router.get('/client/Account', isClientConnected, async function (req, res) {
@@ -57,7 +86,7 @@ router.get('/client/Account', isClientConnected, async function (req, res) {
 
     const data = await response.json();
     res.locals.awards = data;
-    if(req.query.ticket_added)
+    if (req.query.ticket_added)
         res.locals.ticket_added = req.query.ticket_added;
     res.render('client/account');
 });

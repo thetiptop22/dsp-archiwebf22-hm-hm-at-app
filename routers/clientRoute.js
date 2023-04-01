@@ -9,7 +9,7 @@ router.post('/', ClientController.create);
 router.post('/login', ClientController.login);
 
 // Get all Clients
-router.get('/', ClientController.list);
+router.get('/clients', ClientController.list);
 
 // Get a Client by email
 router.get('/client/:email', ClientController.findbyemail);

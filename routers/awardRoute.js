@@ -9,6 +9,7 @@ router.post('/award', AwardController.create);
 // router.get('/:client', AwardController.read);
 
 router.get("/awards/:client", AwardController.list);
+router.get("/awards", AwardController.list);
 
 router.get("/awards/e/:client", AwardController.listByEmail);
 

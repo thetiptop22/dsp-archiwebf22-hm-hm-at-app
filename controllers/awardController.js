@@ -41,7 +41,6 @@ exports.create = function (req, res) {
 };
 
 exports.list = function (req, res) {
-    console.log('req.params.client', req.params.client);
     const obj = [
         {
             $lookup: {
@@ -63,8 +62,11 @@ exports.list = function (req, res) {
         },
     ];
 
+    let findObj = {}
+    if (req.params.client) findObj = { client: req.params.client }
+
     try {
-        Award.find({ client: req.params.client })
+        Award.find(findObj)
             .populate({
                 path: 'ticket',
                 model: 'Gift',
@@ -83,6 +85,8 @@ exports.list = function (req, res) {
         res.status(500).send(err);
     }
 };
+
+
 
 exports.listByEmail = function (req, res) {
     fetch(
