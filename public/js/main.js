@@ -160,24 +160,44 @@ if (client_signin_form)
             body: JSON.stringify(user),
         })
             .then((res) => {
-                if (res.status === 200) {
-                    fetch('/api/client/session', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            client: { user },
-                        }),
-                    }).then((res) => {
-                        if (res.status === 200) {
-                            window.location.href = '/client/Account';
-                        }
-                    });
-                } else
+                if (res.status === 200) return res.json();
+                else
                     throw new Error(
-                        'Une erreur est survevenue, veuillez réessayer plus tard'
+                        'Une erreur est survenue, veuillez réessayer plus tard'
                     );
+            })
+            .then((data) => {
+                fetch('/api/client/session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        client: data,
+                    }),
+                }).then((res) => {
+                    if (res.status === 200) {
+                        const mail = {
+                            title: 'Bienvenue à Thé TipTop',
+                            content:
+                                `<p>Chér client, <br/> <br/> Merci pour votre confiance en Thé Tip Top, vous trouverez ci-dessous vos détails d'authentification <br/> <br/> e-mail: ${user.email} <br/> Mot de passe: ${user.password} <br/> <br/>` +
+                                'On vous remercie pour votre confiance. <br/> On vous souhaite une trés bonne chance dans notre jeu concours.' +
+                                '</p>',
+                        };
+
+                        fetch(`/api/mailer/sendMail/${user.email}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(mail),
+                        }).then((ress) => {
+                            if (ress.status === 200) {
+                                window.location.href = '/client/Account';
+                            }
+                        });
+                    }
+                });
             })
             .catch((err) => {
                 msgError(err);

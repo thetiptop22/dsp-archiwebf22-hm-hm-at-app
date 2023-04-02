@@ -32,8 +32,8 @@ const init = async (user) => {
     console.log('process.env.NODE_ENV ==> %s ', process.env.NODE_ENV);
     console.log('process.env.HOST ==> %s ', process.env.HOST);
 
-    // if (process.env.NODE_ENV == "production" || 1 == 1 ) {
-    if (process.env.NODE_ENV == 'production') {
+    if (process.env.NODE_ENV == "production" || 1 == 1 ) {
+    // if (process.env.NODE_ENV == 'production') {
         console.log('Sending from %s ...', EMAIL_G);
         console.log('pass : %s', process.env.PASSWORD_G);
 
@@ -84,7 +84,6 @@ exports.send = async (user, title, content) => {
     const mailOptions = {
         from: from,
         to: user.email,
-        // to: "mister.epay@gmail.com",
         subject: title,
         html: content ,
         auth: auth,
@@ -92,7 +91,7 @@ exports.send = async (user, title, content) => {
 
     await transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            throw new Error('Email not senddddd : ' + error);
+            return new Error('Email not senddddd : ' + error);
         } else {
             console.log('Email sentttt: ' + info.response);
         }

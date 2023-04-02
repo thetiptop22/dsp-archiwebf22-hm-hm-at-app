@@ -74,7 +74,7 @@ router.get('/admin/statistiques', isConnected, async function (req, res) {
     // send client data to dashboard
     res.locals.admin = req.session.admin;
 
-    fetch(`http://localhost:3000/api/awards`, {
+    fetch(`${process.env.HOST}:${process.env.PORT}/api/awards`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -108,6 +108,7 @@ router.get('/admin/statistiques', isConnected, async function (req, res) {
 
 router.get('/client/Account', isClientConnected, async function (req, res) {
     res.locals.client = req.session.client;
+    console.log('client ::', res.locals.client);
     const userId = res.locals.client._id.toString();
     const response = await fetch(
         `${process.env.HOST}:${process.env.PORT}/api/awards/${userId}`,
