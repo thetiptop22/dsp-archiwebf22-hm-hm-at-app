@@ -28,6 +28,41 @@ function isClientConnected(req, res, next) {
     req.session.client ? next() : res.sendStatus(401);
 }
 
+router.get('/downloads/clients', function (req, res) {
+    try {
+        const Client = require('../models/clientModel');
+
+        Client.find(async function (err, result) {
+            if (err) throw err;
+            else {
+                const clients = result.map((client) => {
+                    return {
+                        firstname: client.firstname ? client.firstname : '-',
+                        lastName: client.user.lastName
+                            ? client.user.lastName
+                            : '-',
+                        email: client.user.email ? client.user.email : '-',
+                        birthDate: client.birthDate ? client.birthDate : '-',
+                    };
+                });
+
+                res.setHeader('Content-Type', 'text/csv');
+                res.setHeader(
+                    'Content-Disposition',
+                    'attachment; filename="clients.csv"'
+                );
+
+                const ObjectsToCsv = require('objects-to-csv');
+                const csv = new ObjectsToCsv(clients);
+                res.send(await csv.toString());
+            }
+        }).populate('user');
+    } catch (err) {
+        console.log({ err });
+        res.status(500).send(err);
+    }
+});
+
 router.get('/admin/dashboard', isConnected, function (req, res) {
     // send client data to dashboard
     res.locals.admin = req.session.admin;

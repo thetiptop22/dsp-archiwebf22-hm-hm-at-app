@@ -90,7 +90,6 @@ if (employe_login_form)
             })
                 .then((res) => res.json())
                 .then(async (data) => {
-                    console.log('data 0 ', data[0]);
                     if (data[0].user == undefined)
                         throw new Error('Email ou mot de passe incorrect');
                     if (await bcrypt.compare(password, data[0].user.password)) {
@@ -106,17 +105,18 @@ if (employe_login_form)
                         })
                             .then((res) => {
                                 if (res.status === 200) {
-                                    console.log('data[0].role', data[0].role);
-                                    switch (data[0].role) {
-                                        case 'admin':
-                                            window.location.href =
-                                                '/admin/statistiques';
-                                            break;
-                                        case 'employe':
-                                            window.location.href =
-                                                '/admin/dashboard';
-                                            break;
-                                    }
+                                    console.log(
+                                        'data[0].role ........ (',
+                                        data[0].role,
+                                        ')'
+                                    );
+
+                                    if (data[0].role == 'employe')
+                                        window.location.href =
+                                            '/admin/dashboard';
+                                    else
+                                        window.location.href =
+                                            '/admin/statistiques';
                                 }
                             })
                             .catch((err) => {
@@ -350,8 +350,8 @@ if (email_search) {
                                     award._id
                                 }">
                                 <input id="award_given" type="checkbox" value="" ${
-                                        award.given ? "checked = 'true'" : ''
-                                    }  class="sr-only peer"
+                                    award.given ? "checked = 'true'" : ''
+                                }  class="sr-only peer"
                                     onchange="
                                     if (this.checked) {
                                         given = new Date();
