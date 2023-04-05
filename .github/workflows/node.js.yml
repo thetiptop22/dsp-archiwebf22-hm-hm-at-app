@@ -10,8 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,11 +19,9 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
     - name: npm install, run and test
       working-directory: .
       run: |
         npm ci
-        npm i -g pm2
-        pm2 start index.js --watch -i max
-        npm test
