@@ -3,10 +3,12 @@ name: Docker Hub CI Pipeline
 on:
   push:
     branches: [ "main", "**" ]
+    paths: ['package.json']
 
 jobs:
   docker:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       -
         name: Set up QEMU
@@ -20,9 +22,16 @@ jobs:
         with:
           username: thetiptop22
           password: dckr_pat_vuUrqw5GutctZUw6QMKScCfmTmc
+
+      - uses: actions/checkout@v1
+
+      - name: Read node from package.json
+        uses: culshaw/read-package-node-version-actions@v1
+        id: package-node-version
+
       -
         name: Build and push
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: user/app:latest
+          tags: thetiptop22/dsp-archiwebf22-hm-hm-at-app:${{ steps.package-node-version.outputs.version }},thetiptop22/dsp-archiwebf22-hm-hm-at-app:latest
