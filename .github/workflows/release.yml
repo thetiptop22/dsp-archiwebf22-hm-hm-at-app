@@ -21,4 +21,4 @@ jobs:
         uses: aynp/node-automatic-release@v1.1.0
         with:
           draft_release: false
-          generate_release_notes: true
+          generate_release_notes: true 
