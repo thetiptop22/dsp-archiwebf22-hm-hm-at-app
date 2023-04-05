@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests",
-    "watch": "export NODE_ENV=development&& nodemon -e js,json,hbs index.js --trace-sync-io",
+    "watch:dev": "export NODE_ENV=development&& nodemon -e js,json,hbs index.js --trace-sync-io",
+    "watch": "nodemon -e js,json,hbs index.js --trace-sync-io",
     "ui": "browser-sync start --proxy localhost:3000 --files=* --ignore=node_modules --reload-delay 1000 --no-ui --no-inject-changes",
     "reload": "git pull origin main && pm2 reload",
     "build": "webpack --config webpack.config.js",

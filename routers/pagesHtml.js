@@ -70,6 +70,8 @@ router.get('/admin/dashboard', isConnected, function (req, res) {
     res.render('admin/dashboard');
 });
 
+
+router.get("admin/tirage" , require("../controllers/pagesHtml"))
 router.get('/admin/statistiques', isConnected, async function (req, res) {
     // send client data to dashboard
     res.locals.admin = req.session.admin;

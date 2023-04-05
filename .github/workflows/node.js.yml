@@ -28,3 +28,4 @@ jobs:
         npm i -g pm2
         pm2 start index.js --watch -i max
         npm test
+        # docker push:tag
