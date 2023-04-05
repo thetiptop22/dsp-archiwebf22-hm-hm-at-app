@@ -1,22 +1,23 @@
-name: 'Publish Draft Release'
+name: Automatic Release
 
 on:
+  # When a change is pushed to package.json in main branch
   push:
-    # branches to consider in the event; optional, defaults to all
     branches: [ "main", "**" ]
-    # file paths to consider in the event; optional, defaults to all
-    paths:
-      - package.json
+    paths: ['package.json']
+  # Manual run
+  workflow_dispatch:
 
 jobs:
-  publish_draft_release_on_version_bump:
+  build:
     runs-on: ubuntu-latest
     steps:
-      # Does a checkout of your repository at the pushed commit SHA
-      - uses: actions/checkout@v1
-      # Checks for a version bump to publish an existing Draft Release
-      - uses: JamesMGreene/node-draft-releaser@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Required to access package.json
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Update Release
+        uses: aynp/node-automatic-release@v1.1.0
         with:
-          allow_unmatched_draft_tag: 'false'  # default value = 'true'
+          draft_release: false
+          generate_release_notes: true
