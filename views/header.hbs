@@ -8,33 +8,42 @@
 	</head>
 	<body>
 		<!-- Navbar goes here -->
-		<nav class="bg-lime-50" x-data="{navbarOpen:false} shadow-lg  ">
-			<div class="container max-w-6xl mx-auto px-4">
-				<div class="flex justify-between">
+		<nav class="bg-lime-200" x-data="{navbarOpen:false} shadow-md  ">
+			<div class="container max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
+				<div class="flex items-center justify-between h-16">
 					<div class="flex space-x-7">
-						<div>
+						<div class="flex-shrink-0">
 							<!-- Website Logo -->
 							<a href="/" class="flex items-center py-4 px-2">
 								<img src="/images/logo.jpeg" alt="Logo" class="h-8 w-8 mr-2">
-								<span class="font-semibold text-blue-900 text-lg">THE TIP TOP</span>
+								<span class="font-semibold text-blue-900 text-lg">TheTipTop</span>
 							</a>
 						</div>
 						<!-- Primary Navbar items -->
-						<div class="hidden md:flex items-center space-x-1">
-							<a href="/" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Accueil</a>
+						<div class="hidden md:flex items-center space-x-5 ml-4">
+							<a href="/" class="py-4 px-2 text-black font-semibold hover:text-green-500 transition duration-300 ">Accueil</a>
 							
-							<a href="/quiSommeNous" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Qui somme nous</a>
-							<a href="/contacte" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contactez Nous</a>
+							<a href="/quiSommeNous" class="py-4 px-2 text-black font-semibold hover:text-green-500 transition duration-300">Qui somme nous</a>
+							<a href="/contacte" class="py-4 px-2 text-black font-semibold hover:text-green-500 transition duration-300">Contactez Nous</a>
+							<a href="/Modalitesparticipation" class="py-4 px-2 text-black font-semibold hover:text-green-500 transition duration-300">Modalites participation</a>
 						</div>
 					</div>
 					<!-- Secondary Navbar items -->
 					<div class="hidden md:flex items-center space-x-3 ">
-						<a href="/login" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Connexion</a>
+						<button onclick="window.location.href='/login'" class="bg-lime-900 hover:bg-lime-500 text-white font-bold py-2 px-4 rounded flex items-center justify-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+
+                            <a href="/login" class="">Connexion</a>
+						</button>
+						
+						
 					</div>
 					<!-- Mobile menu button -->
 					<div class="md:hidden flex items-center">
 						<button class="outline-none mobile-menu-button">
-						<svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+						<svg class=" w-6 h-6 text-lime-800 hover:text-lime-800 "
 							x-show="!showMenu"
 							fill="none"
 							stroke-linecap="round"
@@ -47,7 +56,7 @@
 						</svg>
 					</button>
                     <button class="outline-none user-menu-button">
-						<svg class=" w-5 h-5 text-gray-500 hover:text-green-500 "
+						<svg class=" w-5 h-5 text-lime-800 hover:text-lime-800 "
 							x-show="!showMenu"
 							fill="none"
 							stroke-linecap="round"
@@ -67,18 +76,19 @@
 			<!-- mobile menu -->
 			<div class="hidden mobile-menu">
 				<ul class="">
-					<li><a href="/" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Accueil</a></li>
+					<li><a href="/" class="block text-sm px-2 py-4 text-white bg-lime-500 font-semibold">Accueil</a></li>
 					
 					<li><a href="/quiSommeNous" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Qui somme nous ?</a></li>
 					<li><a href="/contacte" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contactez-Nous</a></li>
+					<li><a href="/Modalitesparticipation" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Modalites participation</a></li>
 
 				</ul>
 			</div>
 
             <div class="hidden user-menu">
 				<ul class="">
-					<li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Connexion</a></li>
-					<li><a href="/register" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Inscription</a></li>
+					<li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-lime-500 font-semibold">Connexion</a></li>
+					<li><a href="/register" class="block text-sm px-2 py-4 hover:bg-lime-500 transition duration-300">Inscription</a></li>
 
 				</ul>
 			</div>
