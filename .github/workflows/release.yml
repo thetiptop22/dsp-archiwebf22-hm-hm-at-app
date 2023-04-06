@@ -3,7 +3,7 @@ name: Automatic Release
 on:
   # When a change is pushed to package.json in main branch
   push:
-    branches: [ "main", "**" ]
+    branches: [ "main"]
     paths: ['package.json']
   # Manual run
   workflow_dispatch:
