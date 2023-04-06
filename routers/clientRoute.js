@@ -13,8 +13,7 @@ router.get('/clients', ClientController.list);
 
 // Get a Client by email
 router.get('/client/:email', ClientController.findbyemail);
-// create new clien
-router.post('/client',  ClientController.create)
+
 // Update a client by id
 router.put('/:id', ClientController.update);
 
