@@ -6,8 +6,11 @@ name: Node.js Package
 on:
   release:
     types: [created]
+    paths: ['.npmrc']
   push:
     branches: [ "main" ]
+    paths: ['.npmrc']
+
 
 jobs:
   publish-github:
