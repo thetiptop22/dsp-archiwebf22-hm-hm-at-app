@@ -1,8 +1,8 @@
-name: Docker Hub CI Pipeline
+name: Push image to Docker Hub
 
 on:
   push:
-    branches: [ "main", "**" ]
+    branches: [ "main",]
     paths: ['package.json']
 
 jobs:

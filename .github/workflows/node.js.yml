@@ -21,7 +21,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-    - name: npm install, run and test
+    - name: npm install, build test and run
       working-directory: .
       run: |
         npm ci
+        npm run build
+        npm run test
+        npm i -g pm2
+        pm2 start index.js -i max
+
