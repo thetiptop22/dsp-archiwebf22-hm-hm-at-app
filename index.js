@@ -2,11 +2,46 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
 const session = require('express-session');
+const passport = require('passport');
+
+const FacebookStrategy = require("passport-facebook").Strategy
 
 console.log(`node-redis version is ${require('redis/package.json').version}`);
 
 const app = express();
 const bodyParser = require('body-parser');
+
+
+
+app.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: 'SECRET'
+  }));
+  
+  app.use(passport.initialize());
+  app.use(passport.session());
+  
+  passport.serializeUser(function (user, cb) {
+    cb(null, user);
+  });
+  
+  passport.deserializeUser(function (obj, cb) {
+    cb(null, obj);
+  });
+  
+  passport.use( new FacebookStrategy(
+    {
+      clientID: "638165178124178", //236492138851534
+      clientSecret: "e718d8470729c418eeab4d29ae204d9d",// b3cacc60a401b2e86834aa3742e3f794
+      callbackURL: "/auth/facebook/callback",
+      profileFields: ["id", "displayName", "email"],
+      passReqToCallback : true,
+    }, function(req, accessToken, refreshToken, profile, done) {
+        console.log(profile);
+        return done(null, profile);
+    }
+  ));
 
 /*
 app.use(session({
@@ -95,7 +130,11 @@ app.get('/h', function (req, res) {
 
     res.render('index_h');
 });
+app.get('/facebook', function (req, res) {
+    require('./controllers/auth/facebook');
 
+    res.render('index_h');
+});
 app.get('/login_h', function (req, res) {
     res.render('login_h');
 });
@@ -157,6 +196,36 @@ app.get('/politiquecookiesutilisation', function (req, res) {
 });
 app.get('/quiSommeNous', function (req, res) {
     res.render('quiSommeNous');
+});
+app.get('/test', function (req, res) {
+
+
+    res.render('test');
+});
+app.get('/login_test', function (req, res) {
+
+
+    res.render('login_test');
+});
+app.get('/inscription', function (req, res) {
+
+
+    res.render('inscription');
+});
+app.get('/contacte_test', function (req, res) {
+
+
+    res.render('contacte_test');
+});
+app.get('/sideebar', function (req, res) {
+
+
+    res.render('sideebar');
+});
+app.get('/cookies', function (req, res) {
+
+
+    res.render('cookies');
 });
 
 app.use('/auth', require('./routers/authRouter'));
