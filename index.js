@@ -181,10 +181,10 @@ app.get('/inscription', function (req, res) {
 
     res.render('inscription');
 });
-app.get('/contacte_test', function (req, res) {
+app.get('/statistiques', function (req, res) {
 
 
-    res.render('contacte_test');
+    res.render('statistiques');
 });
 app.get('/sideebar', function (req, res) {
 
