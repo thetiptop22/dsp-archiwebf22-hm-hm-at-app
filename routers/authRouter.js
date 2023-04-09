@@ -3,6 +3,8 @@ const router = express.Router();
 const passport = require('passport');
 router.use(passport.initialize());
 router.use(passport.session());
+const bcrypt = require('bcrypt');
+const fetch = require('node-fetch')
 
 
 function isLoggedIn(req, res, next) {
@@ -18,7 +20,7 @@ router.get(
     '/google/callback',
     passport.authenticate('google', {
         successRedirect: '/auth/protected',
-        failureRedirect: '/auth/google/failure',
+        failureRedirect: '/auth/failure',
     })
 );
 
@@ -33,7 +35,7 @@ router.get('/protected', isLoggedIn, async (req, res) => {
         numbers: true,
     });
 
-    const passwordHashed = await require('bcrypt').hash(password, 10);
+    const passwordHashed = await bcrypt.hash(password, 10);
 
 
     fetch(
@@ -128,8 +130,55 @@ router.get('/client/logout', (req, res) => {
     res.redirect('/');
 });
 
-router.get('/google/failure', (req, res) => {
+router.get('/failure', (req, res) => {
     res.send('Failed to authenticate..');
+});
+
+router.get("/facebook", passport.authenticate("facebook", { scope : ['email'] })
+);
+
+router.get("/facebook/callback", passport.authenticate("facebook",
+ { successRedirect: '/auth/facebook/login', 
+   failureRedirect: "/failure" })
+);
+
+router.get('/facebook/login', isLoggedIn, async (req, res) => {
+    const facebookUser = req.user;
+    console.log('facebookUser : ' + facebookUser.emails[0].value);
+    try {
+    const response = await fetch(`${process.env.HOST}:${process.env.PORT}/api/client/${facebookUser.emails[0].value}`, {
+        headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.status === 404) {
+        let hashedPwd = bcrypt.hash(password, 10);
+        const createUserResponse = await fetch(`${process.env.HOST}:${process.env.PORT}/api/client`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            email: facebookUser.emails[0].value, 
+            lastName: facebookUser.displayName,
+            password: hashedPwd,
+            })
+        });
+
+        if (!createUserResponse.ok) {
+        throw new Error('Failed to create user');
+        }
+        const createdUserData = await createUserResponse.json();
+        req.session.client = createdUserData;
+        res.redirect('/client/Account');
+    } else if (response.ok) {
+        const data = await response.json();
+        const user = data[0];
+        req.session.client = user;
+        res.redirect('/client/Account');
+    } else {
+        throw new Error('Failed to fetch user data');
+    }
+    } catch (error) {
+    console.log(error);
+    throw new Error(error);
+    }
 });
 
 module.exports = router;

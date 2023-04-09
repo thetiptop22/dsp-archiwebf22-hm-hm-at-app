@@ -1,4 +1,5 @@
 const Award = require('../models/awardModel');
+const fetch = require('node-fetch')
 
 // Create a new award
 exports.create = function (req, res) {
