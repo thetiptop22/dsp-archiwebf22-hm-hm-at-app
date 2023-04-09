@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name='google-signin-client_id' content='634747788205-6hh28obu9j2ape2qu8ch19bdkmpo2cuu.apps.googleusercontent.com' >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Participez à notre concours de thé et gagnez ! Inscrivez-vous dès maintenant pour avoir une chance de gagner !" />
+    <link rel="icon" href="../images/logo.jpg" >
+    <script src='https://cdn.tailwindcss.com'></script>
+    <title>Félicitation</title>
+
+    <style>
+      .animate-pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+
+  </head>
+  <body style="background-image: url('/images/background-thetiptop.jpg');" class="bg-no-repeat bg-cover bg-center">
+    <div class="relative h-screen">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="border-2 border-lime-500 bg-lime-50 rounded-md p-4 animate-pulse">
+          <h1 class="text-3xl text-center font-bold mb-8 justify-center">
+            Félicitation <span class="text-2xl ml-2">&#x1F389; &#x1F389; &#x1F389;</span>
+          </h1>
+          <h2 class="text-lg font-bold mb-8 justify-center">
+            Vous êtes bien enregistré 
+          </h2>
+
+          <div class="flex justify-center">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+              <a href="/">Accueil</a>
+            </button>
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+              <a href="/login">Connexion</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

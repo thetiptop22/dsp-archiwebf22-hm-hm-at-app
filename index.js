@@ -9,6 +9,69 @@ console.log(`node-redis version is ${require('redis/package.json').version}`);
 const app = express();
 const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+
+
+
+
+
+
+
+// Définition du schéma de l'utilisateur
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  password: String
+});
+// Définition du modèle de l'utilisateur à partir du schéma
+const User = mongoose.model('User', userSchema);
+
+
+// Traitement de la soumission du formulaire d'inscription
+app.post('/register', async (req, res) => {
+  const { name, email, password } = req.body;
+
+  // Vérification si l'utilisateur existe déjà
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return res.status(409).json({ message: 'L\'adresse e-mail est déjà utilisée' });
+  }
+
+  // Création d'un nouvel utilisateur
+  const user = new User({
+    name,
+    email,
+    password
+  });
+
+  // Sauvegarde de l'utilisateur dans la base de données
+  try {
+    await user.save();
+  
+    res.redirect('enregistre');
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erreur lors de l\'enregistrement de l\'utilisateur' });
+  }
+});
+const path = require('path');
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+app.engine('html', require('ejs').renderFile);
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+
+
+
+
+
 
 
 
@@ -176,10 +239,10 @@ app.get('/login_test', function (req, res) {
 
     res.render('login_test');
 });
-app.get('/inscription', function (req, res) {
+app.get('/register', function (req, res) {
 
 
-    res.render('inscription');
+    res.render('register');
 });
 app.get('/statistiques', function (req, res) {
 
@@ -191,10 +254,10 @@ app.get('/sideebar', function (req, res) {
 
     res.render('sideebar');
 });
-app.get('/cookies', function (req, res) {
+app.get('/enregistre', function (req, res) {
 
 
-    res.render('cookies');
+    res.render('enregistre');
 });
 
 app.use('/auth', require('./routers/authRouter'));
