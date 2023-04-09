@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="author" content="thetiptop">
+     <meta name="keywords" content="jeu concours, thé, gagner, inscrivez-vous">
+     <meta name="description" content="Participez au jeu concours de thé organisé par TheTipTop et gagnez de nombreux lots. Consultez les modalités de participation et rejoignez-nous pour tenter votre chance.">
+     <meta name="description" content="Participer au concours de thé">
+     <meta name="description" content="Inscrivez-vous et gagnez">
+     <meta name="description" content="Inscrivez-vous et gagnez">
+    <link rel="icon" href="../images/logo.jpg" >
+    <script src='https://cdn.tailwindcss.com'></script>
+    <title>Inscription</title>
+
+  </head>
+
+   <body style="background-image: url('/images/pp.avif');" class="bg-no-repeat bg-cover bg-center">
+     {{> "header" }}
+    <div class="min-h-screen w-100 py-40 h-100 W-100  " >
+      <div class="container mx-auto">
+        <div class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
+          <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('/images/mm.gif');">
+
+          </div>
+          <span class="error hidden">erroooooor</span>
+          <div class="w-full lg:w-1/2 py-16 px-12 bg-lime-50">
+     
+              <div class="flex items-center justify-center mb-12 underline">
+              <div class=" text-green-800 text-3xl animate-spin mr-2">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+               </svg>
+
+
+            </div>
+
+               <h1 class="text-3xl text-center text-green-800 underline"><strong>Inscription</strong></h1>
+            </div>
+              <h2 class="text-lg text-center underline ">Inscrivez-vous et gagnez avec TheTipTop !</h2>
+            <form action="/register" method="post">
+                <div id="app">
+                    <div class="max-w-md m-auto mt-6">
+                      <div class="border-t-4 border-lime-600 overflow-hidden rounded shadow-lg">
+                        <p class="text-xl text-center mt-8 mb-8 bg-lime-100 text-center text-gray-700 py-5 "><strong> Remplir le formulaire </strong> </p>
+                        
+                        <div class="px-4 mb-4">
+                          <input type="text" id="name" name="name" required placeholder="Prénom" class="border border-gray rounded w-full p-3" required="required"/>
+                        </div>
+
+                         
+
+                         <div class="px-4 mb-4">
+                          <input type="email" id="email" name="email" placeholder="Adresse e-mail" class="border border-gray rounded w-full p-3" required="required" />
+                        </div>
+
+                        <div class="px-4 mb-4">
+                          <div class="relative">
+                             <input type="password" id="password" name="password" placeholder="Mot de passe" required="required" class="w-full py-2 pr-10 pl-4 rounded-md text-lime-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50">
+                               <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                                   <svg xmlns="http://www.w3.org/2000/svg" id="eye-icon" class="h-6 w-6 text-gray-700 cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                  </svg>
+
+                                  <svg xmlns="http://www.w3.org/2000/svg" id="eye-slash-icon" class="h-6 w-6 text-lime-800 hidden cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                     <path d="M1 1l22 22"/>
+                                  </svg>
+ 
+                               </div>
+                           </div>
+                        </div>
+
+                        <div class="px-4 mb-4">
+                          <div class="relative">
+                             <input id="confirm-password" name="confirm-password" type="password" required="required" placeholder="Confirmé votre mot de passe" class="w-full py-2 pr-10 pl-4 rounded-md text-lime-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50">
+                               <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                                   <svg xmlns="http://www.w3.org/2000/svg" id="eye-icon2" class="h-6 w-6 text-gray-700 cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                  </svg>
+
+                                  <svg xmlns="http://www.w3.org/2000/svg" id="eye-slash-icon2" class="h-6 w-6 text-lime-800 hidden cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                     <path d="M1 1l22 22"/>
+                                  </svg>
+ 
+                               </div>
+                           </div>
+                        </div>
+
+                        <div class="px-4 mb-6">
+                          <div class="mt-5">
+                            <input type="checkbox" class="border border-gray-400" required="required" >
+                             <span>
+                                  J'accepte <a href="#" id="my-checkbox"  class="text-purple-500 font-semibold">les conditions générales de TheTipTop</a> &  <a href="#" class="text-purple-500 font-semibold">politique de confidentialité</a> 
+                             </span>
+                             <div id="message"></div>
+                        </div>
+                          <hr class="my-6 border-gray-300 w-full">
+                        </div>
+                    
+                        <div class="px-4 mb-6">
+                          <button class="border border-lime-500 bg-lime-600 rounded w-full px-4 py-3 text-white font-semibold px-4 mb-4 " type="submit" name="" value="registre"  />
+
+                            Inscription
+                          </button>
+                          <div>
+                            <p id="error"></p>
+                          </div>
+                            <div class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-red-600 " >
+                               <p id='demo' class="self-center"><strong>Danger </strong>This is Danger alert.</p>
+                                <strong class="text-xl align-center cursor-pointer alert-del"
+                                >&times;</strong
+                                 >
+                              </div>
+                          <hr class="my-6 border-gray-300 w-full">
+                        </div>
+                        <div class="bg-lime-100 text-center text-gray-700 py-5">
+                          Vous avez compte?
+                          <a href="/login" class="font-semibold no-underline text-black">Connexion</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>{{> "footer" }}
+            <script
+            src='https://apis.google.com/js/platform.js'
+            async
+            defer
+        ></script>
+
+        <script src='/dist/bundle.js'>
+        </script>
+        <script>
+          // Get the eye icons
+        const eyeIcon = document.getElementById('eye-icon');
+        const eyeSlashIcon = document.getElementById('eye-slash-icon');
+        const confirmPasswordIcon = document.getElementById('eye-icon2');
+        const confirmPasswordIconSlash = document.getElementById('eye-slash-icon2');
+
+
+       // Get the password input field
+       const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+
+
+// Fonction pour afficher/masquer le mot de passe
+const togglePasswordVisibility = (input, icon, iconSlash) => {
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.classList.add('hidden');
+    iconSlash.classList.remove('hidden');
+  } else {
+    input.type = 'password';
+    icon.classList.remove('hidden');
+    iconSlash.classList.add('hidden');
+  }
+};
+// Événements pour afficher/masquer le mot de passe
+eyeIcon.addEventListener('click', () => {
+  togglePasswordVisibility(passwordInput, eyeIcon, eyeSlashIcon);
+});
+
+eyeSlashIcon.addEventListener('click', () => {
+  togglePasswordVisibility(passwordInput, eyeIcon, eyeSlashIcon);
+});
+
+confirmPasswordIcon.addEventListener('click', () => {
+  togglePasswordVisibility(confirmPasswordInput, confirmPasswordIcon, confirmPasswordIconSlash);
+});
+
+confirmPasswordIconSlash.addEventListener('click', () => {
+  togglePasswordVisibility(confirmPasswordInput, confirmPasswordIcon, confirmPasswordIconSlash);
+});
+
+const form = document.getElementById('my-form');
+const errorElement = document.getElementById('error');
+
+// Fonction pour afficher un message d'erreur
+const showError = (message) => {
+  errorElement.innerText = message;
+  errorElement.classList.remove('hidden');
+};
+
+// Fonction pour effacer le message d'erreur
+const clearError = () => {
+  errorElement.innerText = '';
+  errorElement.classList.add('hidden');
+};
+
+// Fonction pour vérifier si les champs de mot de passe correspondent
+const checkPasswords = () => {
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    showError('Les mots de passe ne correspondent pas');
+  } else {
+    clearError();
+  }
+};
+
+// Événements pour vérifier les champs de mot de passe
+passwordInput.addEventListener('input', checkPasswords);
+confirmPasswordInput.addEventListener('input', checkPasswords);
+
+// Événement pour envoyer le formulaire
+form.addEventListener('submit', (event) => {
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    showError('Les mots de passe ne correspondent pas');
+    event.preventDefault();
+  }
+});
+
+        </script>
+
+        <script>
+          const checkbox = document.getElementById('my-checkbox');
+          const message = document.getElementById('message');
+
+          checkbox.addEventListener('click', () => {
+          if (checkbox.checked) {
+             message.innerText = 'La case est cochée.';
+            } else {
+           message.innerText = 'La case n\'est pas cochée.';
+         }
+         });
+        </script>
+
+        <script>
+             const form = document.querySelector('#register-form');
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+  
+          const name = form.elements.name.value;
+          const email = form.elements.email.value;
+          const password = form.elements.password.value;
+  
+          const response = await fetch('/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, password })
+          });
+  
+          const result = await response.json();
+          console.log(result); // Affiche la réponse du serveur dans la console
+        });
+        </script>
+
+
+
+  </body>
+
+</html>
+
+

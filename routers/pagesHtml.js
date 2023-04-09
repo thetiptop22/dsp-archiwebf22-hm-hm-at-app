@@ -1,5 +1,6 @@
 const expres = require('express');
 const router = expres.Router();
+const fetch = require('node-fetch')
 
 router.get('/login', function (req, res) {
     res.render('login');

@@ -5,6 +5,21 @@ const bcrypt = require('bcrypt');
 
 // Create a new user
 exports.create = async function (req, res) {
+    const { name, email, password } = req.body;
+
+  const user = new User({ name, email, password });
+
+  user.save((err) => {
+    if (err) {
+      res.status(400).json({
+        error: 'Error creating user'
+      });
+    } else {
+      res.json({
+        message: 'User created successfully'
+      });
+    }
+  });
     try {
         const user = new User(req.body);
         await user.save(function (err) {
@@ -17,6 +32,7 @@ exports.create = async function (req, res) {
         res.status(500).send(err);
     }
 };
+
 
 // Create a new client
 exports.createClient = async function (req, res) {
