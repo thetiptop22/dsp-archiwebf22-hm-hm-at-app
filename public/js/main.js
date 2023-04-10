@@ -436,3 +436,37 @@ if (email_search) {
             });
     });
 }
+
+const tirage = document.querySelector('#tirage');
+if (tirage) {
+    tirage.addEventListener('click', (e) => {
+        document.querySelector('#msg').classList.add('hidden');
+        document.querySelector('#loading').classList.remove('hidden');
+        document.querySelector('#gagnant').classList.add('hidden');
+        // after 3 seconds, show #gagnant
+        setTimeout(() => {
+            fetch('/api/clients')
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    document.querySelector('#loading').classList.add('hidden');
+                    document
+                        .querySelector('#gagnant')
+                        .classList.remove('hidden');
+                    if (data.length > 0) {
+                        const client =
+                            data[Math.floor(Math.random() * data.length)];
+                        console.log(client);
+                        // Félicitations à user.lastName , Il a gagné un bon d'achat d'une valeur de 360 EUR
+                        document.querySelector(
+                            '#gagnant td'
+                        ).innerHTML = `Félicitations à ${client.user.lastName} , Il a gagné un bon d'achat d'une valeur de 360 EUR`;
+                    } else {
+                        document.querySelector(
+                            '#gagnant td'
+                        ).innerHTML = `Aucun client n'a encore participé au tirage au sort`;
+                    }
+                });
+        }, 3000);
+    });
+}
