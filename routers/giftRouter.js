@@ -7,8 +7,8 @@ router.post('/gift', GiftController.create);
 
 router.post('/initGifts', GiftController.initGifts)
 
-// Get a Gift by id
-router.get('/:id', GiftController.read);
+// Get a Gift by ticket number
+router.get('/gift/:number', GiftController.read);
 
 
 

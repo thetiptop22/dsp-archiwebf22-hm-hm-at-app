@@ -47,10 +47,10 @@ http://localhost:3000
 Pour des raison de sécurité, le lien d'authentification pour l'administration n'est pas indexé dans le site web, dont voici le lien : \n
 http://dsp-archiwebf22-hm-hm-at.fr/admin
 
-Admin : admin@gmail.com \n
+Admin : admin@thetiptop.fr \n
 MDP : admin@@ \n \n
  
-Employé : employe@gmail.com \n
+Employé : employe@thetiptop.fr \n
 MDP : admin@@ \n \n
 
 Idenifiants Git : \n \n
