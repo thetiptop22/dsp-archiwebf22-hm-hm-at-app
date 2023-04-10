@@ -34,5 +34,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: thetiptop22/dsp-archiwebf22-hm-hm-at-app:latest,thetiptop22/dsp-archiwebf22-hm-hm-at-app:${{ steps.package-node-version.outputs.version }},thetiptop22/dsp-archiwebf22-hm-hm-at-app:release-${{ steps.package-node-version.outputs.version }}
+          tags: thetiptop22/dsp-archiwebf22-hm-hm-at-app:latest,thetiptop22/dsp-archiwebf22-hm-hm-at-app:${{ steps.package-node-version.outputs.version }},thetiptop22/dsp-archiwebf22-hm-hm-at-app:develop-${{ steps.package-node-version.outputs.version }}
 
