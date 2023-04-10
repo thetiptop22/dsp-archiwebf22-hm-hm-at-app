@@ -18,16 +18,16 @@ app.use(session({
   }))
 */
 const cookieParser = require('cookie-parser');
-const cookieSession = require('cookie-session')
+const cookieSession = require('cookie-session');
 
-app.set('trust proxy', 1) // trust first proxy
+app.set('trust proxy', 1); // trust first proxy
 app.use(cookieParser());
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1', 'key2']
-}))
-
-
+app.use(
+    cookieSession({
+        name: 'session',
+        keys: ['key1', 'key2'],
+    })
+);
 
 const cors = require('cors');
 const port = process.env.PORT;
@@ -39,11 +39,15 @@ const clientRouter = require('./routers/clientRoute');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use('/api', require('./routers/awardRoute'));
 app.use('/api', clientRouter);
 app.use('/api', require('./routers/utils'));
 app.use('/api', require('./routers/giftRouter'));
-
-const mongo_uri = process.env.NODE_ENV == 'production' ? 'mongodb://mongo:27017/mongobb' : 'mongodb://localhost:27017/mongobb';
+ 
+const mongo_uri =
+    process.env.NODE_ENV == 'production'
+        ? 'mongodb://mongo:27017/mongobb' 
+        : 'mongodb://localhost:27017/mongobb';
 
 mongoose.connect(mongo_uri, {
     useNewUrlParser: true,
@@ -63,6 +67,7 @@ app.set('views', __dirname + '/views');
 
 // add partials to hbs
 const hbs = require('hbs');
+const { env } = require('process');
 hbs.registerPartials(__dirname + '/views');
 
 //
@@ -99,32 +104,27 @@ app.get('/contacte', function (req, res) {
     res.render('contacte');
 });
 app.get('/dashboard', function (req, res) {
-
-
     res.render('dashboard');
 });
 app.get('/dashboardx', function (req, res) {
-
-
     res.render('dashboardx');
 });
 app.get('/sidebar', function (req, res) {
-
-
     res.render('sidebar');
 });
 app.get('/historiqueGain', function (req, res) {
-
-
     res.render('historiqueGain');
 });
 
+<<<<<<< HEAD
 app.get('/test', function (req, res) {
 
 
     res.render('test');
 });
 
+=======
+>>>>>>> main
 app.get('/conditiongeneral', function (req, res) {
     res.render('conditiongeneral');
 });
@@ -141,10 +141,6 @@ app.get('/login', function (req, res) {
     res.render('login');
 });
 
-app.get('/statistiques', function (req, res) {
-    res.render('statistiques');
-});
-
 app.get('/pageDaccueil', function (req, res) {
     res.render('pageDaccueil');
 });
@@ -154,31 +150,21 @@ app.get('/tableauBordInteractif', function (req, res) {
 });
 
 app.get('/historiqueGains', function (req, res) {
-
-
     res.render('historiqueGains');
 });
 
 app.get('/conditionutilisation', function (req, res) {
-
-
     res.render('conditionutilisation');
 });
 
 app.get('/modalitesParticipation', function (req, res) {
-
-
     res.render('modalitesParticipation');
 });
 
 app.get('/politiquecookiesutilisation', function (req, res) {
-
-
     res.render('politiquecookiesutilisation');
 });
 app.get('/quiSommeNous', function (req, res) {
-
-
     res.render('quiSommeNous');
 });
 

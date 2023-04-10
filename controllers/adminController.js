@@ -62,7 +62,7 @@ exports.findbyemail = function (req, res) {
 const NEW_ADMIN = {
     user: {
         lastName: 'Admin',
-        email: 'admin@gmail.com',
+        email: 'admin@thetiptop.fr',
     },
     role: 'admin',
 };
@@ -70,7 +70,7 @@ const NEW_ADMIN = {
 const NEW_EMPLOYE = {
     user: {
         lastName: 'Admin',
-        email: 'employe@gmail.com',
+        email: 'employe@thetiptop.fr',
     },
     role: 'employe',
 };
@@ -79,6 +79,7 @@ exports.initAdmins = async function (req, res) {
     // Create a new admin
     const passwordHashed = await bcryptjs.hashSync('admin@@', 10);
     NEW_ADMIN.user.password = passwordHashed;
+    NEW_EMPLOYE.user.password = passwordHashed;
 
     console.log('creating admin and employe ...');
     try {

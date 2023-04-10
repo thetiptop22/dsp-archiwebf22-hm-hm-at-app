@@ -1,7 +1,7 @@
 const User = require('../models/userModel');
 const Client = require('../models/clientModel');
 
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 
 // Create a new user
 exports.create = async function (req, res) {
@@ -23,7 +23,9 @@ exports.createClient = async function (req, res) {
     console.log("creating client ...");
     try {
         const user = new User(req.body);
-        user.password = await bcrypt.hash(user.password, 10);
+        console.log("use passr", user);
+        if(user.password    )
+            user.password = await bcrypt.hash(user.password, 10);
 
         await user.save(async function (err) {
             if (err) {
@@ -39,6 +41,7 @@ exports.createClient = async function (req, res) {
             }
         });
     } catch (err) {
+        console.log(err);
         res.status(500).send(err);
     }
 };

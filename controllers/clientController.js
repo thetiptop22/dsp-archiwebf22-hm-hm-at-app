@@ -20,7 +20,7 @@ exports.list = function (req, res) {
         Client.find(function (err, clients) {
             if (err) throw err;
             else res.json(clients);
-        });
+        }).populate('user')
     } catch (err) {
         console.log({ err });
         res.status(500).send(err);

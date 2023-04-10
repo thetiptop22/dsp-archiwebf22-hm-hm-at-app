@@ -27,7 +27,7 @@
 
 
 
-        <a href="/auth/client/logout">
+        <a href="/auth/admin/logout">
             <div
                 class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                 <i class="bi bi-box-arrow-in-right"></i>
@@ -39,6 +39,11 @@
 </div>
 
 <script type="text/javascript">
+    function dropdown() {
+        document.querySelector("#submenu").classList.toggle("hidden");
+        document.querySelector("#arrow").classList.toggle("rotate-0");
+    }
+    dropdown();
 
     function openSidebar() {
         document.querySelector(".sidebar").classList.toggle("hidden");

@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const awardSchema = new Schema({
-    _id: Schema.Types.ObjectId,
 
     given:{
         type:Date,
@@ -12,12 +11,14 @@ const awardSchema = new Schema({
     client: {
         type: Schema.Types.ObjectId,
         ref: 'Client',
-        required: false,
+        required: true,
     },
     ticket: {
-        type: Schema.Types.ObjectId,
-        ref: 'Ticket',
+        type: Schema.Types.Number,
         required: true,
+        unique: [true, 'Ce tiket est déja utilisé'],
+        ref: 'Gift',
+
     },
     admin: {
         type: Schema.Types.ObjectId,
