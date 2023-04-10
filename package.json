@@ -7,8 +7,6 @@
     "test": "jest --passWithNoTests",
     "watch:dev": "export NODE_ENV=development&& nodemon -e js,json,hbs index.js --trace-sync-io",
     "watch": "nodemon -e js,json,hbs index.js --trace-sync-io",
-    "ui": "browser-sync start --proxy localhost:3000 --files=* --ignore=node_modules --reload-delay 1000 --no-ui --no-inject-changes",
-    "reload": "git pull origin main && pm2 reload",
     "build": "webpack --config webpack.config.js",
     "build:watch": "webpack --watch"
   },
@@ -45,7 +43,8 @@
     "path": "^0.12.7",
     "postcss": "^8.4.21",
     "process": "^0.11.10",
-    "redis": "^4.6.5"
+    "redis": "^4.6.5",
+    "supertest": "^6.3.3"
   },
   "devDependencies": {
     "browser-sync": "^2.27.11",
