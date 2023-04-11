@@ -67,17 +67,27 @@
 		</ul>
 	</div>
 </nav>
-<script type="text/javascript"> 
-	today=new Date() 
-	if(today.getHours() >= 0 && today.getHours() < 18) /* A noter que si on mettait <= Bonjour continuerait jusqu'à 18h59 et qu'ici il s'arrête à 18h */ 
-	{      
-	document.getElementById('bonjour').innerHTML='Bonjour'; 
-	} 
-	else 
-	{      
-	document.getElementById('bonjour').innerHTML='Bonsoir'; 
-	} 
+<script type="text/javascript">
+	today=new Date()
+	if(today.getHours() >= 0 && today.getHours() < 18) /* A noter que si on mettait <= Bonjour continuerait jusqu'à 18h59 et qu'ici il s'arrête à 18h */
+	{
+	document.getElementById('bonjour').innerHTML='Bonjour';
+	}
+	else
+	{
+	document.getElementById('bonjour').innerHTML='Bonsoir';
+	}
 	</script>
 <!-- End Navbar -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MQLWG0DGZG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MQLWG0DGZG');
+</script>
 	</body>
 </html>
