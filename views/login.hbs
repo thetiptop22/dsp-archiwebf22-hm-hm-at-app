@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-                <meta
-            name='google-signin-client_id'
-            content='634747788205-m7g24fkp9ritmo95b4iq9ih1ceui9a1v.apps.googleusercontent.com' > <!-- ID client google app -->
-
+    <meta name='google-signin-client_id' content='634747788205-6hh28obu9j2ape2qu8ch19bdkmpo2cuu.apps.googleusercontent.com' >
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Participez à notre concours de thé et gagnez ! Inscrivez-vous dès maintenant pour avoir une chance de gagner !" />
+    <link rel="icon" href="../images/logo.jpg" >
     <script src='https://cdn.tailwindcss.com'></script>
     <title>Login</title>
 
   </head>
 
-  <body style="background-image: url('/images/papear.jpg');" class="bg-no-repeat bg-cover bg-center">
-     {{> "header" }}
-    <div class="min-h-screen w-100 py-40 h-100 W-100 " >
+  <body style="background-image: url('/images/pp.avif');" class="bg-no-repeat bg-cover bg-center">
+    {{> "header" }}
+    <div class="min-h-screen w-100 py-40 h-100 W-100  " >
       <div class="container mx-auto">
         <div class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
-          <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('/images/tea.jpg');">
+          <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('/images/Tea-Tea-Cup-GIF-Tea-TeaCup-Rose-Discover.gif');"  alt="Tasse de thé avec des feuilles de menthe"></div>
+              <span class="error hidden">erroooooor</span>
+                <div class="w-full lg:w-1/2 py-16 px-12 bg-lime-50">
+                  <div class="flex items-center justify-center mb-12 underline">
+                      <div class=" text-green-800 text-3xl animate-pulse mr-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                            </svg>
+                      </div>
+                         <h1 class="text-3xl text-center text-green-800 underline animate-pulse"><strong>Connexion</strong></h1>
+                   </div>
+                   <h2 class="text-lg text-center underline ">Inscrivez-vous et gagnez avec TheTipTop !</h2>
 
-          </div>
-          <div class="w-full lg:w-1/2 py-16 px-12">
-
-             <h1  class="text-3xl mb-12 text-center text-green-800 ">Connexion</h1>
-
-            <form id="client_signin">
+                         <form id="client_signin">
                 <div id="app">
                     <div class="max-w-md m-auto mt-6">
                       <div
@@ -97,9 +102,9 @@
               d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
           </svg>
               <span class="ml-4">
-                Connexion
-                avec
-                Facebook
+               <a href="auth/facebook">Connexion avec
+                Facebook</a> 
+                
               </span>
           </div>
         </button>
@@ -112,6 +117,7 @@
                     </div>
                   </div>
             </form>
+
           </div>
         </div>
       </div>
@@ -122,10 +128,43 @@
             defer
         ></script>
 
+        <script src='/js/main.js'>
+            // Appelé lors du clic sur le bouton "Signup with Google" function
+        </script>
+
         <script src='/dist/bundle.js'>
         </script>
+        <script>
+          // Get the eye icons
+           const eyeIcon = document.getElementById('eye-icon');
+           const eyeSlashIcon = document.getElementById('eye-slash-icon');
+
+         // Get the password input field
+          const passwordInput = document.getElementById('password');
+
+        // Add click event listeners to the eye icons
+           eyeIcon.addEventListener('click', () => {
+        // Show the password
+          passwordInput.type = 'text';
+          eyeIcon.classList.add('hidden');
+          eyeSlashIcon.classList.remove('hidden');
+        });
+
+         eyeSlashIcon.addEventListener('click', () => {
+       // Hide the password
+         passwordInput.type = 'password';
+         eyeSlashIcon.classList.add('hidden');
+         eyeIcon.classList.remove('hidden');
+        });
+
+        </script>
+  
   </body>
 
 </html>
+
+
+
+
 
 
