@@ -142,7 +142,7 @@ app.use('/api', require('./routers/giftRouter'));
 const mongo_uri =
     process.env.NODE_ENV == 'production'
         ? 'mongodb://mongo:27017/mongobb' 
-        : 'mongodb://localhost:27017/mongobb';
+        : 'mongodb://localhost:27017/mongobbb';
 
 mongoose.connect(mongo_uri, {
     useNewUrlParser: true,
