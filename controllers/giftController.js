@@ -31,28 +31,28 @@ exports.read = function (req, res) {
 exports.initGifts = async function (req, res) {
     const GIFTS = [
         {
-            label: "Thé Noir 50G",
+            label: "Infuseur à thé",
             value: 2.8,
-            quota: 0.5, // 50%
+            quota: 0.6, // 50%
         },
         {
-            label: 'Thé vert 14 sachets',
+            label: 'Boite de 100g d’un thé détox ou d’infusion',
             value: 5.2,
-            quota: 0.3, // 30%
+            quota: 0.2, // 30%
         },
         {
-            label: 'Thé noir Congou goût Russe 100G Bio',
+            label: 'Boite de 100g d’un thé signature',
             value: 8.5,
-            quota: 0.15, // 15%
+            quota: 0.1, // 15%
         },
         {
-            label: "Bon d'achat 10€",
-            value: 10,
-            quota: 0.04, // 4%
+            label: "Un coffret découverte d’une valeur de 39€",
+            value: 39,
+            quota: 0.06, // 4%
         },
         {
-            label: "Bon d'achat 15€",
-            value: 15,
+            label: "Un coffret découverte d’une valeur de 69€",
+            value: 69,
             quota: 0.01, // 1%
         },
     ];
@@ -73,9 +73,8 @@ exports.initGifts = async function (req, res) {
     }
 
     const myGifts = [];
-    let ticket = 1000;
-    // Itérer sur les million de cadeaux et ajouter l'attribut x avec une valeur aléatoire
-    for (let i = 1; i <= 1000000; i++) {
+    let ticket = 1000000000;
+    for (let i = 1; i <= 1500000; i++) {
         const gift = {...getRandomGiftValue()};
         gift.ticket = ticket++;
         myGifts.push(gift);

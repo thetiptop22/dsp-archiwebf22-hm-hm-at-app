@@ -47,34 +47,29 @@
                 <label for="default-search"
                     class="mb-2 text-sm font-medium text-amber-900 sr-only dark:text-white"></label>
                 <div class="relative mb-10">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg aria-hidden="true" class="w-5 h-5 text-amber-500 dark:text-amber-400" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
+                    <div  >
+
+                    <button id="tirage" type="submit"
+                        class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
+                        m-auto text-center block uppercase">Chercher le gagnant</button>
                     </div>
-                    <form id="email_search" >
-                    <input type="search" id="email"
-                        class="px-4 mb-4 block w-full p-4 pl-10 text-sm text-amber-900 border border-amber-300 rounded-lg bg-amber-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-amber-700 dark:border-amber-600 dark:placeholder-amber-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Adresse e-mail du client ..." required>
-                    <input type="hidden" id="admin_id" value={{ admin._id }}>
-
-                    <button type="submit"
-                        class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Chercher</button>
-                    </form>
                 </div>
 
-                <div id="coordonnees"></div>
-
-                <div class="bg-black w-full flex justify-center text-withe text-xl mb-2 lg:mb-5">
-                    Gains
-                </div>
-
-                <table class="table-auto border  center  justify-center w-full" id="awards" >
+                <table class="table-auto border  center  justify-center w-full" id="msg" >
                     <tr>
                         <td class="text-center text-black">
-                            Veuillez chercher un client pour voir ses gains
+                            Veuillez cliquez sur "Chercher le gagnant" pour commencer le tirage
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <img src="/images/loading-gif-png-5.gif" alt="" id="loading" width="300rem" class="m-auto hidden">
+                </div>
+
+                <table class="table-auto border  center  justify-center w-full hidden" id="gagnant" >
+                    <tr>
+                        <td class="text-center text-black">
+                            Félicitations à Malki Hicham, Il a gagné un bon d'achat d'une valeur de 360 EUR
                         </td>
                     </tr>
                 </table>
