@@ -2,159 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta name='google-signin-client_id'
-        content='634747788205-m7g24fkp9ritmo95b4iq9ih1ceui9a1v.apps.googleusercontent.com'>
+    <meta name='google-signin-client_id' content='634747788205-6hh28obu9j2ape2qu8ch19bdkmpo2cuu.apps.googleusercontent.com'>
     <!-- ID client google app -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://unpkg.com/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-
-        <link rel="icon" href="../images/logo.jpg" >
+    <link rel="icon" href="../images/logo.jpg" >
     <meta name="author" content="thetiptop">
     <meta name="keywords" content="jeu concours, thé, gagner, inscrivez-vous">
     <meta name="description" content="Participez au jeu concours de thé organisé par TheTipTop et gagnez de nombreux lots. Consultez les modalités de participation et rejoignez-nous pour tenter votre chance.">
     <meta name="description" content="Participer au concours de thé">
     <meta name="description" content="Inscrivez-vous et gagnez">
+    <meta name="description" content="Inscrivez-vous et gagnez">
+    <script src='https://cdn.tailwindcss.com'></script>
 
     <title>Jeu concours</title>
     <!-- Ajoutez les liens vers les fichiers CSS et JS de Tailwind ici -->
 </head>
 
-<body>
-    {{> "header" }}
-    <div class="  bg-cover bg-center" style="background-image: url('/images/background-thetiptop1.jpg');">
-        <header class="bg-white shadow text-center justify-center items-center">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center justify-center items-center">
-                <h1 class="text-5xl font-bold text-gray-800 mb-8 justify-center items-center text-center">Jeu concours
-                </h1>
-            </div>
-        </header>
-        <div class=" lg:flex px-4 py-8 ">
-
-            <div class=" w-full flex-1  rounded-lg  basis-full shadow-lg overflow-hidden animate-bounce">
-                <div>
-                    <img src="/images/tiptop.png" alt="Mon image" width="500rem" class="m-auto mb-20">
-                </div>
-                <div class=" px-4 py-3 mb-8 justify-center bg-white w-60 items-center mx-auto">
-                    <img src="/images/logo.jpg" alt="Mon image" class="justify-center items-center">
-                </div>
-            </div>
-
-            <div class="flex-1 sm:w-100 justify-center items-center place-content-center mt-6 ml-6">
-
-                <h1 class="text-3xl font-bold text-gray-800 mb-8 justify-center items-center place-content-center">
-                    Participez maintenant!</h1>
-
-
-                <div class="bg-white-500 text-lime-50 font-bold underline mb-4">
-                    <p classe="bg-blue-900 underline">Merci de renseigner ce formulaire pour s'inscrire au jeu
-                        concours</p>
-                </div>
-                <br>
-
-                <form class="max-w-xl" id="client_signin">
-                    <div class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-red-600 error hidden">
-                        <p class="self-center"></p>
-                        <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-2">
-                        <div class="w-full px-3 mb-6 md:mb-0">
-                            <label class="block tracking-wide text-gray-700 text-xs font-bold mb-2 text-xl" for="nom">
-                                Prénom
-                            </label>
-                            <input
-                                class="appearance-none block w-full border-2 border-lime-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="lastName" type="text" placeholder="Entrez votre nom">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-2">
-                        <div class="w-full px-3 mb-6 md:mb-0">
-                            <label class="block tracking-wide text-gray-700 text-xs font-bold mb-2 text-xl" for="mail">
-                                E-mail
-                            </label>
-                            <input
-                                class="appearance-none block w-full border-2 border-lime-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="email" type="text" placeholder="Entrez votre adresse e-mail">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 mb-6 md:mb-0">
-                            <label class="block tracking-wide text-gray-700 text-xs font-bold mb-2 text-xl"
-                                for="password">
-                                Mot de passe
-                            </label>
-                            <input
-                                class="appearance-none block w-full border-2 border-lime-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="password" type="password" placeholder="Entrez votre mot de passe">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 mb-6 md:mb-0">
-                            <label class="block tracking-wide text-gray-700 text-xs font-bold mb-2 text-xl"
-                                for="password">
-                                Confirmez Mot de passe
-                            </label>
-                            <input
-                                class="appearance-none block w-full border-2 border-lime-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                id="password2" type="password" placeholder="Entrez votre mot de passe">
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between justify-center w-full">
-                        <button
-                            class="bg-green-600 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded-full w-full border-2 border-black"
-                            type="submit">
-                            Participer
-                        </button>
-                    </div>
-                    <br>
-
-                    <div class="flex items-center justify-between">
-                        <button
-                            class="px-4 py-2 rounded-lg font-bold bg-blue-600 text-white flex items-center justify-center rounded-full border-2 border-black w-1/2 disabled">
-                            <div class="bg-[url('/facebook-logo.png') no-repeat center left w-4 h-4 mr-2"></div>
-                            Via Facebook
-                        </button>
-                        <button
-                            class="px-4 py-2 rounded-lg font-bold bg-red-600 text-white flex items-center justify-center rounded-full border-2 border-black w-1/2">
-                            <div class="bg-[url('/google-logo.png') no-repeat center left w-4 h-4 mr-2"></div>
-                            <a href="/auth/google">Via Google</a>
-                        </button>
-                    </div>
-                    <br>
-                </form>
-                <div class="list-disc list-inside">
-                    <li href="#"
-                        class="font-medium text-black dark:text-blue-500 hover:underline hover:cursor-pointer list-disc list-inside">
-                        Politique de confidentialité et Conditions d'utilisation>
-                    </li>
-                    <li href="#"
-                        class="font-medium text-black dark:text-blue-500 hover:underline hover:cursor-pointer list-disc list-inside">
-                        Politique de confidentialité et Conditions d'utilisation>
-                    </li>
-                    <li href="#"
-                        class="font-medium text-black dark:text-blue-500 hover:underline hover:cursor-pointer list-disc	">
-                        Réglement du jeu concours et modalités de participation>
-                    </li>
-                    <li href="#" class="font-medium text-black dark:text-blue-500 hover:underline hover:cursor-pointer">
-                        Politique d'utilisation des cookies>
-                    </li>
-                    <li href="#" class="font-medium text-black dark:text-blue-500 hover:underline hover:cursor-pointer">
-                        Mentions légales>
-                    </li>
-                </div>
-            </div>
-        </div>
+<body style="background-image: url('../images/tea.gif');" class="bg-no-repeat bg-cover bg-center">
+{{> "header" }}
+    <div>
+        <a class="flex justify-center items-center "><img src="../images/logo.jpg" alt="Logo TheTipTop - Jeu concours de thé" class="w-32 h-32 py-3"></a>
     </div>
-    {{> "footer" }}
-    <script src='https://apis.google.com/js/platform.js' async defer></script>
+     <div>
+     <h1 class="text-white text-center text-4xl curved-text">Bienvenue dans le jeu-concours<strong class="text-lime-500"> TheTipTop</strong> </h1> 
+     </div>
+      <div class=" flex px-5 ">
+        <img class="float-right ml-5 rounded-full w-50 h-60 animate-bounce " src="../images/tiptop.png" ></div>
 
-    <script src="/dist/bundle.js"></script>
+     <div class="flex flex-row   ">
+        <div class="border bg-black">
+            <h2 class="text-white px-10 py-7 text-lg "> - TheTipTop fête l'ouverture de son magasin à Nice . <br> - TheTipTop organise un concours pour tous <br> 	&nbsp; ses clients afin de gagner de nombreux lots.
+            <br> - Comment participer : <a href="/modalitesparticipation" class="underline animate-pulse  text-lime-500"> Modalités de participation</a> .</h2>
+          
+            <div class="px-10 py-5">
+                <a href="#" class="bg-yellow-300 rounded-3xl py-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-yellow-300 hover:text-white duration-300 hover:border border border-transparent">Connexion</a>
+                <a href="#" class="bg-lime-300 rounded-3xl py-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-lime-300 hover:text-white duration-300 hover:border border border-transparent">Inscription<span>&#10148;</span></a>
+            </div>
+        </div>  
+     </div> 
+    
 </body>
+{{> "footer" }}
 
 </html>
