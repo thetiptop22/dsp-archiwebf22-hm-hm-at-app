@@ -7,6 +7,12 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../images/logo.jpg" >
+    <meta name="author" content="thetiptop">
+    <meta name="keywords" content="jeu concours, thé, gagner, inscrivez-vous">
+    <meta name="description" content="Participez au jeu concours de thé organisé par TheTipTop et gagnez de nombreux lots. Consultez les modalités de participation et rejoignez-nous pour tenter votre chance.">
+    <meta name="description" content="Participer au concours de thé">
+    <meta name="description" content="Inscrivez-vous et gagnez">
     <script src='https://cdn.tailwindcss.com'></script>
     <title>Login</title>
 
@@ -17,12 +23,19 @@
     <div class="min-h-screen w-100 py-40 h-100 W-100 " >
       <div class="container mx-auto">
         <div class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
-          <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('/images/tea.jpg');">
+          <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('/images/Tea-Tea-Cup-GIF-Tea-TeaCup-Rose-Discover.gif');">
 
           </div>
-          <div class="w-full lg:w-1/2 py-16 px-12">
+          <div class="w-full lg:w-1/2 py-16 px-12 bg-lime-50">
 
-             <h1  class="text-3xl mb-12 text-center text-green-800 ">Connexion</h1>
+             <div class="flex items-center justify-center mb-12 underline">
+                      <div class=" text-green-800 text-3xl animate-pulse mr-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                            </svg>
+                      </div>
+                         <h1 class="text-3xl text-center text-green-800 underline animate-pulse"><strong>Connexion</strong></h1>
+                   </div>
 
             <form id="client_login">
                 <div id="app">
@@ -41,14 +54,31 @@
                           />
                         </div>
                         <div class="px-4 mb-4">
-                          <input
+                        
+                        
+                         <div class="relative">
+                            <input
                           name="pwd"
                             type="password"
                             placeholder="Mot de passe "
                             class="border border-gray rounded w-full p-3"
                             id="password"
                           />
-                        </div>
+                          <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="eye-icon" class="h-6 w-6 text-gray-700 cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" id="eye-slash-icon" class="h-6 w-6 text-gray-700 hidden cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                            <path d="M1 1l22 22"/>
+                            </svg>
+                          </div>
+                         </div>
+
+
+                         </div>
                         <div class="px-4 mb-4 flex">
                           <div class="w-1/2">
 
@@ -121,6 +151,30 @@
         ></script>
 
         <script src='/dist/bundle.js'>
+        </script>
+          <script>
+          // Get the eye icons
+           const eyeIcon = document.getElementById('eye-icon');
+           const eyeSlashIcon = document.getElementById('eye-slash-icon');
+
+         // Get the password input field
+          const passwordInput = document.getElementById('password');
+
+        // Add click event listeners to the eye icons
+           eyeIcon.addEventListener('click', () => {
+        // Show the password
+          passwordInput.type = 'text';
+          eyeIcon.classList.add('hidden');
+          eyeSlashIcon.classList.remove('hidden');
+        });
+
+         eyeSlashIcon.addEventListener('click', () => {
+       // Hide the password
+         passwordInput.type = 'password';
+         eyeSlashIcon.classList.add('hidden');
+         eyeIcon.classList.remove('hidden');
+        });
+
         </script>
   </body>
 
