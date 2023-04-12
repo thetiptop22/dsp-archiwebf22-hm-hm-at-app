@@ -52,7 +52,7 @@ switch (process.env.NODE_ENV) {
         mongo_uri = 'mongodb://localhost:27017/mongobb';
         break;
     case 'preproduction':
-        mongo_uri = 'mongodb://mongo:27018/mongobb';
+        mongo_uri = 'mongodb://mongo-preprod:27018/mongobb';
         break;
     default:
         mongo_uri = 'mongodb://localhost:27017/mongobb';
