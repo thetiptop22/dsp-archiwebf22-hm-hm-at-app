@@ -43,11 +43,21 @@ app.use('/api', require('./routers/awardRoute'));
 app.use('/api', clientRouter);
 app.use('/api', require('./routers/utils'));
 app.use('/api', require('./routers/giftRouter'));
- 
-const mongo_uri =
-    process.env.NODE_ENV == 'production'
-        ? 'mongodb://mongo:27017/mongobb' 
-        : 'mongodb://localhost:27017/mongobb';
+
+switch (process.env.NODE_ENV) {
+    case 'production':
+        mongo_uri = 'mongodb://mongo:27017/mongobb';
+        break;
+    case 'development':
+        mongo_uri = 'mongodb://localhost:27017/mongobb';
+        break;
+    case 'preproduction':
+        mongo_uri = 'mongodb://mongo-preprod:27018/mongobb';
+        break;
+    default:
+        mongo_uri = 'mongodb://localhost:27017/mongobb';
+        break;
+}
 
 mongoose.connect(mongo_uri, {
     useNewUrlParser: true,

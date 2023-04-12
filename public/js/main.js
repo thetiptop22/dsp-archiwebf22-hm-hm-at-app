@@ -470,3 +470,26 @@ if (tirage) {
         }, 3000);
     });
 }
+
+
+  const cookieBanner = document.getElementById("cookie-banner");
+  if(cookieBanner){
+    const cookieAcceptButton = document.getElementById("cookie-accept");
+
+    // Vérifier si le cookie d'acceptation des cookies est déjà défini
+    const cookieAccepted = document.cookie.match(/^(.*;)?\s*cookies-accepted\s*=\s*[^;]+(.*)?$/);
+
+    // Si le cookie n'est pas défini, afficher la bannière
+    if (!cookieAccepted) {
+
+        cookieBanner.style.display = "block";
+    } else {
+        cookieBanner.style.display = "none";
+    }
+
+    // Ajouter un gestionnaire d'événements pour masquer la bannière et définir le cookie lors de l'acceptation
+    cookieAcceptButton.addEventListener("click", () => {
+        cookieBanner.style.display = "none";
+        document.cookie = "cookies-accepted=true; path=/; max-age=31536000";
+    })
+}
