@@ -1,134 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name='google-signin-client_id' content='634747788205-6hh28obu9j2ape2qu8ch19bdkmpo2cuu.apps.googleusercontent.com' > <!-- ID client google app -->
+ <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../images/logo.jpg" >
     <script src='https://cdn.tailwindcss.com'></script>
-    <title>Contactez-Nous</title>
-
+    <title>Contacte</title>
   </head>
+  <body style="background-image: url('./images/papear.jpg');" class="bg-no-repeat bg-cover bg-center">
 
-  <body style="background-image: url('/images/pp.avif');" class="bg-no-repeat bg-cover bg-center">
-     {{> "header" }}
-    <div class="min-h-screen w-100 py-40 h-100 W-100  " >
+   {{> "header" }}
+
+    <div class="min-h-screen w-100 py-40 h-100 W-100 " >
       <div class="container mx-auto">
         <div class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
-          <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('/images/Tea-Tea-Cup-GIF-Tea-TeaCup-Rose-Discover.gif');">
-                
-          </div>
-          <span class="error hidden">erroooooor</span>
-          <div class="w-full lg:w-1/2 py-16 px-12 bg-lime-50">
-          
-     
-                 <div class="flex items-center justify-center mb-12 underline">
-              <div class=" text-withe text-3xl animate-pulse mr-2">
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
-                  </svg>
 
 
 
-            </div>
+    <div class="container mx-auto justify-center ml-10">
+      <h1 class="text-3xl font-bold my-8 justify-center">Contactez-nous</h1>
+      <div class="my-4">
+        <p class="font-bold">Raison sociale :</p>
+        <p >Thé Tip Top</p>
+      </div>
+<div class="my-4">
+  <p class="font-bold">Adresse mail :</p>
+  <a href="mailto:thetiptop.project@gmail.com" class=" text-blue-600 hover:underline">thetiptop.project@gmail.com</a>
+</div>
+<div class="my-4">
+  <p class="font-bold">Téléphone :</p>
+  <a href="tel:+33763589313" class="text-blue-600 hover:underline">+33-763-58-93-13</a>
+</div>
+<div class="my-8">
+  <p>Bienvenue au siège de Thé Tip Top, nous sommes ravis de vous accueillir !
+ </p>
+  <iframe
+    class="w-full h-64 my-4"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11481.785383601487!2d4.3522776!3d43.834860500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b126f0327e2a75%3A0xd941a988f786a9c9!2sRue%20de%20Saint-Gilles%2025%2C%2030000%20N%C3%AEmes%2C%20France!5e0!3m2!1sen!2sus!4v1650505580471!5m2!1sen!2sus"
+    allowfullscreen=""
+    loading="lazy"
+  ></iframe>
+</div>
+    </div>
 
-               <h1 class="text-3xl text-center text-green-800 underline"><strong>Contactez-Nous</strong></h1>
-            </div>
-             
-
-            <form id="my-form" >
-                <div id="app">
-                    <div class="max-w-md m-auto mt-6">
-                      <div class="border-t-4 border-blue-600 overflow-hidden rounded shadow-lg">
-                        
-                        <p class="text-xl text-center mt-8 mb-8 bg-gray-100 text-center text-gray-700 py-5"><strong>Nous somme à votre écoute </strong></p>
-                        
-                        <div class="px-4 mb-4">
-                          <input name="fname" id="fname" type="text" placeholder="Prénom" class="border border-gray rounded w-full p-3" required="required"/>
-                        </div>
-
-                         <div class="px-4 mb-4">
-                          <input name="fname" id="name" type="text" placeholder="Nom" class="border border-gray rounded w-full p-3" required="" />
-                        </div>
-
-                         <div class="px-4 mb-4">
-                          <input name="fname" id="email" type="email" placeholder="Adresse e-mail" class="border border-gray rounded w-full p-3" required="required" />
-                        </div>
-
-                        <div class="px-4 mb-4">
-                           <span class="uppercase text-sm text-gray-600 font-bold">Message</span>
-                            <textarea
-                           class="w-full h-32 bg-white text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
-                        </div>
-
-               
-
-                        <div class="px-4 mb-6">
-                          <div class="mt-5">
-                            <input type="checkbox" class="border border-withe" required="required" >
-                             <span>
-                                  J'accepte <a href="#" id="my-checkbox"  class="text-purple-500 font-semibold">les conditions générales de TheTipTop</a> &  <a href="#" class="text-purple-500 font-semibold">politique de confidentialité</a> 
-                             </span>
-                             <div id="message"></div>
-                        </div>
-                          <hr class="my-6 border-gray-300 w-full">
-                        </div>
-                    
-                        <div class="px-4 mb-6">
-                          <button class="border border-lime-500 bg-lime-600 rounded w-full px-4 py-3 text-white font-semibold px-4 mb-4 " type="submit" name="" value="registre"  />
-
-                            Envoyer
-                          </button>
-                          <div>
-                            <p id="error"></p>
-                          </div>
-                            <div class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-red-600 " >
-                               <p id='demo' class="self-center"><strong>Danger </strong>This is Danger alert.</p>
-                                <strong class="text-xl align-center cursor-pointer alert-del"
-                                >&times;</strong
-                                 >
-                              </div>
-                          <hr class="my-6 border-gray-300 w-full">
-                        </div>
-                        <div class="bg-gray-100 text-center text-gray-700 py-5">
-                          Vous avez compte?
-                          <a href="/login" class="font-semibold no-underline text-black">Connexion</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </form>
-          </div>
         </div>
       </div>
-    </div>{{> "footer" }}
-            <script
-            src='https://apis.google.com/js/platform.js'
-            async
-            defer
-        ></script>
-
-        <script src='/dist/bundle.js'>
-        </script>
-
-
-        <script>
-          const checkbox = document.getElementById('my-checkbox');
-  const message = document.getElementById('message');
-
-  checkbox.addEventListener('click', () => {
-    if (checkbox.checked) {
-      message.innerText = 'La case est cochée.';
-    } else {
-      message.innerText = 'La case n\'est pas cochée.';
-    }
-  });
-        </script>
-
-
-
+    </div>
+    {{> "footer" }}
   </body>
 
 </html>
-
-

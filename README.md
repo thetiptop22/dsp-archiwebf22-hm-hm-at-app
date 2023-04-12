@@ -2,7 +2,7 @@
 
 clone the project
 ```
-git@github.com:malkico/dsp-archiwebf22-hm-hm-at-app.git
+git clone git@github.com:malkico/dsp-archiwebf22-hm-hm-at-app.git
 ```
 
 Create your branch (you can do this every time you have a new mission)
@@ -21,11 +21,8 @@ when you finish, push your code to github
 git push
 ```
 
-make sure to make a pull request of your branch \n
-
+make sure to make a pull request of your branch
 https://github.com/malkico/dsp-archiwebf22-hm-hm-at-app/pulls)
-
-
 a code review is necessary to push you branch into the main branch 😉
 
 ## install dependencies
@@ -42,18 +39,18 @@ npm run watch
 http://localhost:3000
 
 
-## Authentificatio
+## Authentification
 
-Pour des raison de sécurité, le lien d'authentification pour l'administration n'est pas indexé dans le site web, dont voici le lien : \n
-http://dsp-archiwebf22-hm-hm-at.fr/admin
+Pour des raison de sécurité, le lien d'authentification pour l'administration n'est pas indexé dans le site web, dont voici le lien : 
+https://dsp-archiwebf22-hm-hm-at.fr/admin/login
 
-Admin : admin@thetiptop.fr \n
-MDP : admin@@ \n \n
+-- Admin : admin@thetiptop.fr
+-- MDP : admin@@ 
  
-Employé : employe@thetiptop.fr \n
-MDP : admin@@ \n \n
+-- Employé : employe@thetiptop.fr
+-- MDP : admin@@ 
 
-Idenifiants Git : \n \n
+### Idenifiants Git :
 
-thetiptop.project@gmail.com \n
-thetiptop.project2023
+-- thetiptop.project@gmail.com
+-- thetiptop.project2023

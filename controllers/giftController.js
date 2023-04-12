@@ -74,8 +74,9 @@ exports.initGifts = async function (req, res) {
 
     const myGifts = [];
     let ticket = 1000000000;
-    for (let i = 1; i <= 1500000; i++) {
-        const gift = {...getRandomGiftValue()};
+    // for (let i = 1; i <= 1500000; i++) {
+    for (let i = 1; i <= 1000000; i++) {
+            const gift = {...getRandomGiftValue()};
         gift.ticket = ticket++;
         myGifts.push(gift);
 
