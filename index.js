@@ -2,6 +2,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
 const session = require('express-session');
+const passport = require('passport');
+const FacebookStrategy = require("passport-facebook").Strategy;
 
 console.log(`node-redis version is ${require('redis/package.json').version}`);
 
@@ -17,6 +19,27 @@ app.use(session({
     }
   }))
 */
+
+passport.serializeUser(function (user, cb) {
+    cb(null, user);
+  });
+  
+  passport.deserializeUser(function (obj, cb) {
+    cb(null, obj);
+  });
+  
+  passport.use( new FacebookStrategy(
+    {
+      clientID: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+      callbackURL: "/auth/facebook/callback",
+      profileFields: ["id", "displayName", "email"],
+      passReqToCallback : true,
+    }, function(req, accessToken, refreshToken, profile, done) {
+        return done(null, profile);
+    }
+  ));
+
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 
