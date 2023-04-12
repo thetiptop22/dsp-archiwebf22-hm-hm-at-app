@@ -2,25 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta name='google-signin-client_id'
-        content='634747788205-m7g24fkp9ritmo95b4iq9ih1ceui9a1v.apps.googleusercontent.com'>
+    <meta name='google-signin-client_id' content='634747788205-6hh28obu9j2ape2qu8ch19bdkmpo2cuu.apps.googleusercontent.com'>
     <!-- ID client google app -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://unpkg.com/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-
-        <link rel="icon" href="../images/logo.jpg" >
+    <link rel="icon" href="../images/logo.jpg" >
     <meta name="author" content="thetiptop">
     <meta name="keywords" content="jeu concours, thé, gagner, inscrivez-vous">
     <meta name="description" content="Participez au jeu concours de thé organisé par TheTipTop et gagnez de nombreux lots. Consultez les modalités de participation et rejoignez-nous pour tenter votre chance.">
     <meta name="description" content="Participer au concours de thé">
     <meta name="description" content="Inscrivez-vous et gagnez">
+    <meta name="description" content="Inscrivez-vous et gagnez">
+    <script src='https://cdn.tailwindcss.com'></script>
 
     <title>Jeu concours</title>
     <!-- Ajoutez les liens vers les fichiers CSS et JS de Tailwind ici -->
 </head>
+
 
 <body>
     {{> "header" }}
@@ -157,10 +157,25 @@
             </div>
         </div>
     </div>
-    {{> "footer" }}
-    <script src='https://apis.google.com/js/platform.js' async defer></script>
+     <div>
+     <h1 class="text-white text-center text-4xl curved-text">Bienvenue dans le jeu-concours<strong class="text-lime-500"> TheTipTop</strong> </h1> 
+     </div>
+      <div class=" flex px-5 ">
+        <img class="float-right ml-5 rounded-full w-50 h-60 animate-bounce " src="../images/tiptop.png" ></div>
 
-    <script src="/dist/bundle.js"></script>
+     <div class="flex flex-row   ">
+        <div class="border bg-black">
+            <h2 class="text-white px-10 py-7 text-lg "> - TheTipTop fête l'ouverture de son magasin à Nice . <br> - TheTipTop organise un concours pour tous <br> 	&nbsp; ses clients afin de gagner de nombreux lots.
+            <br> - Comment participer : <a href="/modalitesparticipation" class="underline animate-pulse  text-lime-500"> Modalités de participation</a> .</h2>
+          
+            <div class="px-10 py-5">
+                <a href="#" class="bg-yellow-300 rounded-3xl py-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-yellow-300 hover:text-white duration-300 hover:border border border-transparent">Connexion</a>
+                <a href="#" class="bg-lime-300 rounded-3xl py-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-lime-300 hover:text-white duration-300 hover:border border border-transparent">Inscription<span>&#10148;</span></a>
+            </div>
+        </div>  
+     </div> 
+    
 </body>
+{{> "footer" }}
 
 </html>
