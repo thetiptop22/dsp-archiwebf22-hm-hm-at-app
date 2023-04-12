@@ -1,4 +1,21 @@
-		<!-- Navbar goes here -->
+		<div class=" fixed bottom-10 left-0 z-50 mt-10 mx-auto px-20 hidden" id="cookie-banner">
+<div style='background-color:rgb(255, 255, 255)'>
+<div class="w-72 bg-white rounded-lg shadow-md p-6" style="cursor: auto;">
+  <div class="w-16 mx-auto relative -mt-10 mb-3">
+    <img class="-mt-1" src="https://www.svgrepo.com/show/30963/cookie.svg" alt="Cookie Icon SVG">
+  </div>
+  <span class="w-full sm:w-48  block leading-normal text-gray-800 text-md mb-3">Nous utilisons des cookies pour offrir une meilleure expérience utilisateur.</span>
+  <div class="flex items-center justify-between">
+    <a class="text-xs text-gray-400 mr-1 hover:text-gray-800" href="#">Politique de confidentialité</a>
+    <div class="w-1/2">
+      <button id="cookie-accept" type="button" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">Accepter</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+        <!-- Navbar goes here -->
 		<nav class="bg-lime-300" x-data="{navbarOpen:false} shadow-md  ">
 			<div class="container max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
 				<div class="flex items-center justify-between h-16">
@@ -98,7 +115,8 @@
 				});
 			</script>
 
-           <script type='module' src='/main.js'></script>
+        <script src='/dist/bundle.js'>
+        </script>
         <!-- Google tag (gtag.js) -->
         <script
             async
